@@ -10,13 +10,13 @@
           class="login-input"
         >
           <el-form-item label="用户名">
-            <el-input></el-input>
+            <el-input v-model="username"></el-input>
           </el-form-item>
           <el-form-item label="密码">
-            <el-input></el-input>
+            <el-input v-model="password" show-password></el-input>
           </el-form-item>
           <el-form-item size="medium">
-            <el-button size="medium">登录</el-button>
+            <el-button size="medium" @click="signIn">登录</el-button>
             <el-button size="medium" class="register-button">注册</el-button>
           </el-form-item>
         </el-form>
@@ -25,7 +25,32 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  name: "login",
+  data() {
+    return {
+      username: "admin",
+      password: "admin"
+    };
+  },
+  methods: {
+    signIn() {
+      if (this.username !== "admin" || this.password !== "admin") {
+        this.$message({
+          message: "用户名或密码不正确",
+          type: "error",
+          duration: 1000
+        });
+      } else {
+        this.$message({
+          message: "登录成功",
+          type: "success",
+          duration: 1000
+        });
+      }
+    }
+  }
+};
 </script>
 <style lang="scss">
 .login-container {

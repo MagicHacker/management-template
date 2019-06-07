@@ -1,9 +1,18 @@
 <template>
   <div id="app">
-    <router-link to="/login"></router-link>
-    <router-view />
+    <login></login>
   </div>
 </template>
+<script>
+import Login from "./components/login";
+export default {
+  name: "App",
+  mounted() {},
+  components: {
+    Login
+  }
+};
+</script>
 
 <style lang="scss">
 #app {

@@ -17,7 +17,9 @@
           </el-form-item>
           <el-form-item size="medium">
             <el-button size="medium" @click="signIn">登录</el-button>
-            <el-button size="medium" class="register-button">注册</el-button>
+            <el-button size="medium" class="register-button" @click="signUp"
+              >注册</el-button
+            >
           </el-form-item>
         </el-form>
       </div>
@@ -47,7 +49,15 @@ export default {
           type: "success",
           duration: 1000
         });
+        // 登录跳转
+        this.$router.push({ path: "homepage" });
       }
+    },
+    signUp() {
+      this.$message({
+        message: "开发中，敬请期待",
+        duration: 1000
+      });
     }
   }
 };

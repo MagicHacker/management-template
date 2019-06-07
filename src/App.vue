@@ -1,16 +1,13 @@
 <template>
   <div id="app">
-    <login></login>
+    <router-view />
   </div>
 </template>
 <script>
-import Login from "./components/login";
 export default {
   name: "App",
   mounted() {},
-  components: {
-    Login
-  }
+  components: {}
 };
 </script>
 

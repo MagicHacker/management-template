@@ -8,12 +8,26 @@ import {
   Input,
   ButtonGroup,
   Button,
-  Message
+  Message,
+  Badge,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 Vue.config.productionTip = false;
 
-[Form, FormItem, Input, ButtonGroup, Button].forEach(item => {
+[
+  Form,
+  FormItem,
+  Input,
+  ButtonGroup,
+  Button,
+  Badge,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem
+].forEach(item => {
   Vue.use(item);
 });
 Vue.prototype.$message = Message;

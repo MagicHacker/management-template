@@ -1,8 +1,10 @@
 <template>
   <div class="homepage-wrap">
     <header-item></header-item>
-    <sidebar-item></sidebar-item>
-    <body-item></body-item>
+    <div class="main-wrap">
+      <sidebar-item></sidebar-item>
+      <body-item></body-item>
+    </div>
   </div>
 </template>
 <script>
@@ -18,4 +20,18 @@ export default {
   }
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.homepage-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+  .main-wrap {
+    width: 100%;
+    height: calc(100% - 50px);
+    position: absolute;
+    left: 0px;
+    top: 50px;
+  }
+}
+</style>

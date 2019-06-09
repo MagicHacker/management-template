@@ -6,42 +6,54 @@
           <span>管理系统模板</span>
         </li>
         <li>
-          <img src="../assets/svg/hamburger.svg" />
+          <el-tooltip effect="dark" content="菜单栏收缩" placement="bottom">
+            <img src="../assets/svg/hamburger.svg" />
+          </el-tooltip>
         </li>
       </ul>
     </div>
     <div class="header-right">
       <ul>
         <li>
-          <el-badge :value="3">
-            <img src="../assets/svg/email.svg" alt />
-          </el-badge>
+          <el-tooltip effect="dark" content="邮件" placement="bottom">
+            <el-badge :value="3">
+              <img src="../assets/svg/email.svg" alt />
+            </el-badge>
+          </el-tooltip>
         </li>
         <li>
-          <el-badge :value="3">
-            <img src="../assets/svg/bell.svg" alt />
-          </el-badge>
+          <el-tooltip effect="dark" content="信息" placement="bottom">
+            <el-badge :value="3">
+              <img src="../assets/svg/bell.svg" alt />
+            </el-badge>
+          </el-tooltip>
         </li>
         <li>
-          <el-badge :value="3">
-            <img src="../assets/svg/tasks.svg" alt />
-          </el-badge>
+          <el-tooltip effect="dark" content="任务" placement="bottom">
+            <el-badge :value="3">
+              <img src="../assets/svg/tasks.svg" alt />
+            </el-badge>
+          </el-tooltip>
         </li>
         <li>
-          <el-badge :value="3">
-            <img src="../assets/svg/palette.svg" alt />
-          </el-badge>
+          <el-tooltip effect="dark" content="调色板" placement="bottom">
+            <el-badge :value="3">
+              <img src="../assets/svg/palette.svg" alt />
+            </el-badge>
+          </el-tooltip>
         </li>
         <li>
-          <el-dropdown trigger="click" placement="bottom">
-            <img src="../assets/svg/person.svg" alt />
-            <el-dropdown-menu>
-              <el-dropdown-item>个人中心</el-dropdown-item>
-              <el-dropdown-item>首页</el-dropdown-item>
-              <el-dropdown-item>项目地址</el-dropdown-item>
-              <el-dropdown-item divided>退出登录</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
+          <el-tooltip effect="dark" content="个人中心" placement="bottom">
+            <el-dropdown trigger="click" placement="bottom">
+              <img src="../assets/svg/person.svg" alt />
+              <el-dropdown-menu>
+                <el-dropdown-item>个人中心</el-dropdown-item>
+                <el-dropdown-item>首页</el-dropdown-item>
+                <el-dropdown-item>项目地址</el-dropdown-item>
+                <el-dropdown-item divided>退出登录</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </el-tooltip>
         </li>
       </ul>
     </div>

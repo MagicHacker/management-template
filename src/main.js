@@ -12,7 +12,11 @@ import {
   Badge,
   Dropdown,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Menu,
+  Submenu,
+  MenuItem,
+  MenuItemGroup
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 Vue.config.productionTip = false;
@@ -26,7 +30,11 @@ Vue.config.productionTip = false;
   Badge,
   Dropdown,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Menu,
+  Submenu,
+  MenuItem,
+  MenuItemGroup
 ].forEach(item => {
   Vue.use(item);
 });

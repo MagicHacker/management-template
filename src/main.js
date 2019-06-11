@@ -17,7 +17,8 @@ import {
   Submenu,
   MenuItem,
   MenuItemGroup,
-  Tooltip
+  Tooltip,
+  Popover
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 Vue.config.productionTip = false;
@@ -36,7 +37,8 @@ Vue.config.productionTip = false;
   Submenu,
   MenuItem,
   MenuItemGroup,
-  Tooltip
+  Tooltip,
+  Popover
 ].forEach(item => {
   Vue.use(item);
 });

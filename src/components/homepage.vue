@@ -3,20 +3,20 @@
     <header-item></header-item>
     <div class="main-wrap">
       <sidebar-item></sidebar-item>
-      <body-item></body-item>
+      <div class="body-wrap">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>
 <script>
 import HeaderItem from "./header-item";
 import SidebarItem from "./sidebar-item";
-import BodyItem from "./body-item";
 export default {
   name: "HomePage",
   components: {
     HeaderItem,
-    SidebarItem,
-    BodyItem
+    SidebarItem
   }
 };
 </script>
@@ -32,6 +32,13 @@ export default {
     position: absolute;
     left: 0px;
     top: 50px;
+    .body-wrap {
+      width: calc(100% - 200px);
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 200px;
+    }
   }
 }
 </style>

@@ -14,35 +14,35 @@
     </div>
     <div class="header-right">
       <ul>
-        <li>
+        <li v-popover:emailPop>
           <el-tooltip effect="dark" content="邮件" placement="bottom">
             <el-badge :value="3">
               <img src="../assets/svg/email.svg" alt />
             </el-badge>
           </el-tooltip>
         </li>
-        <li>
+        <li v-popover:messagePop>
           <el-tooltip effect="dark" content="信息" placement="bottom">
             <el-badge :value="3">
               <img src="../assets/svg/bell.svg" alt />
             </el-badge>
           </el-tooltip>
         </li>
-        <li>
+        <li v-popover:tasksPop>
           <el-tooltip effect="dark" content="任务" placement="bottom">
             <el-badge :value="3">
               <img src="../assets/svg/tasks.svg" alt />
             </el-badge>
           </el-tooltip>
         </li>
-        <li>
+        <li v-popover:colorPop>
           <el-tooltip effect="dark" content="调色板" placement="bottom">
             <el-badge :value="3">
               <img src="../assets/svg/palette.svg" alt />
             </el-badge>
           </el-tooltip>
         </li>
-        <li>
+        <li v-popover:personPop>
           <el-tooltip effect="dark" content="个人中心" placement="bottom">
             <el-dropdown trigger="click" placement="bottom">
               <img src="../assets/svg/person.svg" alt />
@@ -57,6 +57,18 @@
         </li>
       </ul>
     </div>
+    <el-popover ref="emailPop" placement="bottom" trigger="click" width="300">
+      <div>email</div>
+    </el-popover>
+    <el-popover ref="messagePop" placement="bottom" trigger="click" width="300">
+      <div>message</div>
+    </el-popover>
+    <el-popover ref="tasksPop" placement="bottom" trigger="click" width="300">
+      <div>tasks</div>
+    </el-popover>
+    <el-popover ref="colorPop" placement="bottom" trigger="click" width="300">
+      <div>palette</div>
+    </el-popover>
   </div>
 </template>
 <script>

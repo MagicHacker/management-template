@@ -44,13 +44,23 @@
         </li>
         <li v-popover:personPop>
           <el-tooltip effect="dark" content="个人中心" placement="bottom">
-            <el-dropdown trigger="click" placement="bottom">
+            <el-dropdown
+              trigger="click"
+              placement="bottom"
+              @command="handleCommand"
+            >
               <img src="../assets/svg/person.svg" alt />
               <el-dropdown-menu>
-                <el-dropdown-item>个人中心</el-dropdown-item>
-                <el-dropdown-item>首页</el-dropdown-item>
-                <el-dropdown-item>项目地址</el-dropdown-item>
-                <el-dropdown-item divided>退出登录</el-dropdown-item>
+                <el-dropdown-item command="personalCenter"
+                  >个人中心</el-dropdown-item
+                >
+                <el-dropdown-item command="homepage">首页</el-dropdown-item>
+                <el-dropdown-item command="projectAddress"
+                  >项目地址</el-dropdown-item
+                >
+                <el-dropdown-item divided command="signOut"
+                  >退出登录</el-dropdown-item
+                >
               </el-dropdown-menu>
             </el-dropdown>
           </el-tooltip>
@@ -73,7 +83,25 @@
 </template>
 <script>
 export default {
-  name: "HeaderItem"
+  name: "HeaderItem",
+  methods: {
+    handleCommand(command) {
+      switch (command) {
+        case "personalCenter":
+          this.$router.push({ path: "" });
+          break;
+        case "homepage":
+          this.$router.push({ path: "homepage" });
+          break;
+        case "projectAddress":
+          window.open("https://github.com/MagicHacker/management-template");
+          break;
+        case "signOut":
+          this.$router.push({ path: "login" });
+          break;
+      }
+    }
+  }
 };
 </script>
 <style lang="scss">

@@ -22,9 +22,13 @@ type 用于说明 commit 的类别。
 
 - revert：代码回滚。
 
+- build：代码构建。
+
 - style：样式的变动。
 
 - test：添加测试。
+
+- library：引入第三方库。
 
 ### CSS 命名规范
 

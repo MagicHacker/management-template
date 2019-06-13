@@ -50,7 +50,7 @@ export default {
           duration: 1000
         });
         // 登录跳转
-        this.$router.push({ path: "homepage" });
+        this.$router.push({ path: "mainPage" });
       }
     },
     signUp() {

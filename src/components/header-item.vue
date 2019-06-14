@@ -67,8 +67,8 @@
         </li>
       </ul>
     </div>
-    <el-popover ref="emailPop" placement="bottom" trigger="click" width="300">
-      <div>email</div>
+    <el-popover ref="emailPop" placement="bottom" trigger="click" width="303">
+      <email-panel></email-panel>
     </el-popover>
     <el-popover ref="messagePop" placement="bottom" trigger="click" width="300">
       <div>message</div>
@@ -82,8 +82,12 @@
   </div>
 </template>
 <script>
+import EmailPanel from "./email-panel";
 export default {
   name: "HeaderItem",
+  components: {
+    EmailPanel
+  },
   methods: {
     handleCommand(command) {
       switch (command) {

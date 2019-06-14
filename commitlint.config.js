@@ -14,7 +14,8 @@ module.exports = {
         "test",
         "chore",
         "library",
-        "build"
+        "build",
+        "image"
       ]
     ]
   }

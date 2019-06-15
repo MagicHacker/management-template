@@ -19,7 +19,8 @@ import {
   MenuItemGroup,
   Tooltip,
   Popover,
-  Card
+  Card,
+  Progress
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 Vue.config.productionTip = false;
@@ -40,7 +41,8 @@ Vue.config.productionTip = false;
   MenuItemGroup,
   Tooltip,
   Popover,
-  Card
+  Card,
+  Progress
 ].forEach(item => {
   Vue.use(item);
 });

@@ -67,7 +67,7 @@
         </li>
       </ul>
     </div>
-    <el-popover ref="emailPop" placement="bottom" trigger="click" width="303">
+    <el-popover ref="emailPop" placement="bottom" trigger="click" width="300">
       <email-panel></email-panel>
     </el-popover>
     <el-popover ref="messagePop" placement="bottom" trigger="click" width="300">

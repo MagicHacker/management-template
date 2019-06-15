@@ -48,7 +48,7 @@ export default {
   .list-item {
     display: flex;
     cursor: pointer;
-    margin-bottom: 10px;
+    padding: 10px 15px;
     img {
       width: 40px;
       height: 40px;

@@ -35,11 +35,13 @@
             </el-badge>
           </el-tooltip>
         </li>
-        <li v-popover:colorPop>
+        <li v-popover:colorPop class="palette-item">
           <el-tooltip effect="dark" content="调色板" placement="bottom">
-            <el-badge :value="3">
-              <img src="../assets/svg/palette.svg" alt />
-            </el-badge>
+            <el-color-picker
+              v-model="color"
+              size="small"
+              :predefine="predefineColors"
+            ></el-color-picker>
           </el-tooltip>
         </li>
         <li v-popover:personPop>
@@ -76,9 +78,6 @@
     <el-popover ref="tasksPop" placement="bottom" trigger="click" width="300">
       <task-panel></task-panel>
     </el-popover>
-    <el-popover ref="colorPop" placement="bottom" trigger="click" width="300">
-      <div>palette</div>
-    </el-popover>
   </div>
 </template>
 <script>
@@ -87,6 +86,27 @@ import MessagePanel from "./message-panel";
 import TaskPanel from "./task-panel";
 export default {
   name: "HeaderItem",
+  data() {
+    return {
+      color: "#FF8C00",
+      predefineColors: [
+        "#ff4500",
+        "#ff8c00",
+        "#ffd700",
+        "#90ee90",
+        "#00ced1",
+        "#1e90ff",
+        "#c71585",
+        "rgba(255, 69, 0, 0.68)",
+        "rgb(255, 120, 0)",
+        "hsv(51, 100, 98)",
+        "hsva(120, 40, 94, 0.5)",
+        "hsl(181, 100%, 37%)",
+        "hsla(209, 100%, 56%, 0.73)",
+        "#c7158577"
+      ]
+    };
+  },
   components: {
     EmailPanel,
     MessagePanel,
@@ -151,6 +171,9 @@ export default {
     }
     ul li:last-child img {
       vertical-align: -7px;
+    }
+    .palette-item {
+      vertical-align: -10px;
     }
   }
 }

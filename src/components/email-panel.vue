@@ -30,12 +30,12 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .panel-header {
   position: relative;
   font-size: 16px;
   border-bottom: 1px solid #ccc;
-  padding: 5px 15px;
+  padding: 5px 0px;
   .right-button {
     position: absolute;
     top: 5px;
@@ -49,7 +49,7 @@ export default {
   .list-item {
     display: flex;
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 5px 0px;
     img {
       width: 40px;
       height: 40px;

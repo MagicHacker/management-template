@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="panel-header">
-      <span>邮件</span>
+      <span>通知</span>
       <i class="el-icon-check right-button" @click="checkEmail"></i>
     </div>
     <div class="panel-body">
@@ -11,7 +11,6 @@
           <div class="list-content">
             <div class="list-header">
               <span>David Belle</span>
-              <small>12:01 PM</small>
             </div>
             <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
           </div>

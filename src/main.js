@@ -20,7 +20,8 @@ import {
   Tooltip,
   Popover,
   Card,
-  Progress
+  Progress,
+  ColorPicker
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 Vue.config.productionTip = false;
@@ -42,7 +43,8 @@ Vue.config.productionTip = false;
   Tooltip,
   Popover,
   Card,
-  Progress
+  Progress,
+  ColorPicker
 ].forEach(item => {
   Vue.use(item);
 });

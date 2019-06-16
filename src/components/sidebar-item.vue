@@ -85,6 +85,12 @@
           Todo Lists
         </el-menu-item>
       </router-link>
+      <router-link to="/personCenter">
+        <el-menu-item index="9">
+          <img src="../assets/svg/person.svg" alt />
+          个人中心
+        </el-menu-item>
+      </router-link>
     </el-menu>
   </div>
 </template>

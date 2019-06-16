@@ -5,7 +5,7 @@
         <li>
           <span>管理系统模板</span>
         </li>
-        <li>
+        <li @click="toggleSideBar">
           <el-tooltip effect="dark" content="菜单栏收缩" placement="bottom">
             <img src="../assets/svg/hamburger.svg" />
           </el-tooltip>
@@ -104,7 +104,8 @@ export default {
         "hsl(181, 100%, 37%)",
         "hsla(209, 100%, 56%, 0.73)",
         "#c7158577"
-      ]
+      ],
+      sideBarOpen: false
     };
   },
   components: {
@@ -113,6 +114,9 @@ export default {
     TaskPanel
   },
   methods: {
+    toggleSideBar() {
+      this.sideBarOpen = !this.sideBarOpen;
+    },
     handleCommand(command) {
       switch (command) {
         case "personalCenter":

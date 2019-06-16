@@ -56,7 +56,7 @@
                 <el-dropdown-item command="personalCenter"
                   >个人中心</el-dropdown-item
                 >
-                <el-dropdown-item command="homepage">首页</el-dropdown-item>
+                <el-dropdown-item command="mainpage">首页</el-dropdown-item>
                 <el-dropdown-item command="projectAddress"
                   >项目地址</el-dropdown-item
                 >
@@ -116,10 +116,10 @@ export default {
     handleCommand(command) {
       switch (command) {
         case "personalCenter":
-          this.$router.push({ path: "" });
+          this.$router.push({ path: "personCenter" });
           break;
-        case "homepage":
-          this.$router.push({ path: "homepage" });
+        case "mainpage":
+          this.$router.push({ path: "mainpage" });
           break;
         case "projectAddress":
           window.open("https://github.com/MagicHacker/management-template");

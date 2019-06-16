@@ -17,6 +17,7 @@ import ClientError from "./components/client-error.vue";
 import ServerError from "./components/server-error.vue";
 import TodoLists from "./components/todo-lists.vue";
 import MainPage from "./components/main-page.vue";
+import PersonCenter from "./components/person-center.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -92,6 +93,10 @@ export default new Router({
         {
           path: "/todoLists",
           component: TodoLists
+        },
+        {
+          path: "/personCenter",
+          component: PersonCenter
         }
       ]
     },

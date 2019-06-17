@@ -21,7 +21,9 @@ import {
   Popover,
   Card,
   Progress,
-  ColorPicker
+  ColorPicker,
+  Row,
+  Col
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 Vue.config.productionTip = false;
@@ -44,7 +46,9 @@ Vue.config.productionTip = false;
   Popover,
   Card,
   Progress,
-  ColorPicker
+  ColorPicker,
+  Row,
+  Col
 ].forEach(item => {
   Vue.use(item);
 });

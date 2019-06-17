@@ -103,15 +103,19 @@ export default {
     }
     .email-item {
       background-color: #fc8675;
+      border-radius: 10px;
     }
     .visitor-item {
       background-color: #5ab6df;
+      border-radius: 10px;
     }
     .message-item {
       background-color: #65cea7;
+      border-radius: 10px;
     }
     .task-item {
       background-color: #ebc85e;
+      border-radius: 10px;
     }
   }
 }

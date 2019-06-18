@@ -71,20 +71,36 @@
       </el-col>
     </el-row>
     <div class="all-line"></div>
-    <ul>
-      <li class="show-item"></li>
-      <li class="show-item"></li>
-    </ul>
-    <ul>
-      <li class="list-item"></li>
-      <li class="list-item"></li>
-      <li class="list-item"></li>
-    </ul>
   </div>
 </template>
 <script>
+const echarts = require("echarts/lib/echarts");
+require("echarts/lib/chart/line");
+require("echarts/lib/component/tooltip");
+require("echarts/lib/component/title");
 export default {
-  name: "MainPage"
+  name: "MainPage",
+  data() {
+    return {};
+  },
+  mounted() {
+    const chart = echarts.init(document.querySelector(".all-line"));
+    const options = {
+      tooltip: {},
+      xAxis: {
+        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+      },
+      yAxis: {},
+      series: [
+        {
+          name: "销量",
+          type: "line",
+          data: [5, 20, 36, 10, 10, 20]
+        }
+      ]
+    };
+    chart.setOption(options);
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -117,6 +133,10 @@ export default {
       background-color: #ebc85e;
       border-radius: 10px;
     }
+  }
+  .all-line {
+    width: 100%;
+    height: 300px;
   }
 }
 </style>

@@ -73,14 +73,28 @@
     <el-card class="line-card" shadow="always">
       <div class="line-chart"></div>
     </el-card>
+    <el-row type="flex" justify="space-around">
+      <el-col :span="11">
+        <el-card shadow="always" class="pie-card">
+          <div class="pie-chart"></div>
+        </el-card>
+      </el-col>
+      <el-col :span="11">
+        <el-card shadow="always" class="bar-card">
+          <div class="bar-chart"></div>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 <script>
 const echarts = require("echarts/lib/echarts");
+require("echarts/lib/chart/bar");
 require("echarts/lib/chart/line");
 require("echarts/lib/component/tooltip");
 require("echarts/lib/component/title");
 require("echarts/lib/component/legend");
+require("echarts/lib/chart/pie");
 export default {
   name: "MainPage",
   data() {
@@ -88,6 +102,8 @@ export default {
   },
   mounted() {
     const chart = echarts.init(document.querySelector(".line-chart"));
+    const pieChart = echarts.init(document.querySelector(".pie-chart"));
+    const barChart = echarts.init(document.querySelector(".bar-chart"));
     const options = {
       legend: {
         type: "plain",
@@ -131,8 +147,85 @@ export default {
         }
       ]
     };
+    const pieOptions = {
+      legend: {
+        data: ["邮件", "访客", "信息", "任务"]
+      },
+      calculable: true,
+      series: [
+        {
+          type: "pie",
+          radius: [20, 110],
+          center: ["50%", "50%"],
+          roseType: "radius",
+          label: {
+            normal: {
+              show: false
+            },
+            emphasis: {
+              show: true
+            }
+          },
+          lableLine: {
+            normal: {
+              show: false
+            },
+            emphasis: {
+              show: true
+            }
+          },
+          data: [
+            { value: 10, name: "邮件" },
+            { value: 5, name: "访客" },
+            { value: 15, name: "信息" },
+            { value: 25, name: "任务" }
+          ]
+        }
+      ]
+    };
+    const barOptions = {
+      legend: {
+        data: ["预计", "实际"]
+      },
+      xAxis: {
+        type: "category",
+        data: [
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期四",
+          "星期五",
+          "星期六",
+          "星期日"
+        ]
+      },
+      yAxis: [
+        {
+          type: "value",
+          name: "访客数"
+        }
+      ],
+      series: [
+        {
+          name: "预计",
+          type: "bar",
+          data: [5, 20, 36, 10, 10, 20, 50]
+        },
+        {
+          name: "实际",
+          type: "bar",
+          data: [3, 10, 20, 5, 5, 10, 30]
+        }
+      ]
+    };
+    pieChart.setOption(pieOptions);
     chart.setOption(options);
-    window.onresize = chart.resize;
+    barChart.setOption(barOptions);
+    window.onresize = () => {
+      chart.resize();
+      pieChart.resize();
+      barChart.resize();
+    };
   }
 };
 </script>
@@ -170,10 +263,24 @@ export default {
   .line-card {
     margin: 20px 27px;
     border-radius: 5px;
+    .line-chart {
+      width: 100%;
+      height: 350px;
+    }
   }
-  .line-chart {
+  .pie-card {
     width: 100%;
-    height: 350px;
+    .pie-chart {
+      width: 100%;
+      height: 300px;
+    }
+  }
+  .bar-card {
+    width: 100%;
+    .bar-chart {
+      width: 100%;
+      height: 300px;
+    }
   }
 }
 </style>

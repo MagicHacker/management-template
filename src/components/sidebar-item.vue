@@ -102,10 +102,10 @@ export default {
 <style lang="scss">
 .sidebar-wrap {
   width: 200px;
-  height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
+  bottom: 0px;
   background-color: rgb(124, 147, 170);
   font-size: 20px;
   .el-submenu__title i {

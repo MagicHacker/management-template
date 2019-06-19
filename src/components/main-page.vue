@@ -70,7 +70,9 @@
         </el-card>
       </el-col>
     </el-row>
-    <div class="all-line"></div>
+    <el-card class="line-card" shadow="always">
+      <div class="line-chart"></div>
+    </el-card>
   </div>
 </template>
 <script>
@@ -78,24 +80,54 @@ const echarts = require("echarts/lib/echarts");
 require("echarts/lib/chart/line");
 require("echarts/lib/component/tooltip");
 require("echarts/lib/component/title");
+require("echarts/lib/component/legend");
 export default {
   name: "MainPage",
   data() {
     return {};
   },
   mounted() {
-    const chart = echarts.init(document.querySelector(".all-line"));
+    const chart = echarts.init(document.querySelector(".line-chart"));
     const options = {
-      tooltip: {},
-      xAxis: {
-        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+      legend: {
+        type: "plain",
+        data: ["预计", "实际"]
       },
-      yAxis: {},
+      tooltip: {},
+      grid: {
+        left: "3%",
+        right: "3%",
+        top: "30px",
+        bottom: "20px"
+      },
+      xAxis: {
+        type: "category",
+        data: [
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期四",
+          "星期五",
+          "星期六",
+          "星期日"
+        ]
+      },
+      yAxis: [
+        {
+          type: "value",
+          name: "访客数"
+        }
+      ],
       series: [
         {
-          name: "销量",
+          name: "预计",
           type: "line",
-          data: [5, 20, 36, 10, 10, 20]
+          data: [5, 20, 36, 10, 10, 20, 50]
+        },
+        {
+          name: "实际",
+          type: "line",
+          data: [3, 10, 20, 5, 5, 10, 30]
         }
       ]
     };
@@ -134,9 +166,13 @@ export default {
       border-radius: 10px;
     }
   }
-  .all-line {
+  .line-card {
+    margin: 20px 27px;
+    border-radius: 5px;
+  }
+  .line-chart {
     width: 100%;
-    height: 300px;
+    height: 350px;
   }
 }
 </style>

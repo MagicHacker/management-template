@@ -132,6 +132,7 @@ export default {
       ]
     };
     chart.setOption(options);
+    window.onresize = chart.resize;
   }
 };
 </script>

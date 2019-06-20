@@ -26,6 +26,13 @@ import {
   Col
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
+require("echarts/lib/chart/bar");
+require("echarts/lib/chart/line");
+require("echarts/lib/component/tooltip");
+require("echarts/lib/component/title");
+require("echarts/lib/component/legend");
+require("echarts/lib/chart/pie");
+const Echarts = require("echarts/lib/echarts");
 Vue.config.productionTip = false;
 
 [
@@ -52,6 +59,7 @@ Vue.config.productionTip = false;
 ].forEach(item => {
   Vue.use(item);
 });
+Vue.prototype.$echarts = Echarts;
 Vue.prototype.$message = Message;
 new Vue({
   router,

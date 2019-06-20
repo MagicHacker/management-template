@@ -88,22 +88,15 @@
   </div>
 </template>
 <script>
-const echarts = require("echarts/lib/echarts");
-require("echarts/lib/chart/bar");
-require("echarts/lib/chart/line");
-require("echarts/lib/component/tooltip");
-require("echarts/lib/component/title");
-require("echarts/lib/component/legend");
-require("echarts/lib/chart/pie");
 export default {
   name: "MainPage",
   data() {
     return {};
   },
   mounted() {
-    const chart = echarts.init(document.querySelector(".line-chart"));
-    const pieChart = echarts.init(document.querySelector(".pie-chart"));
-    const barChart = echarts.init(document.querySelector(".bar-chart"));
+    const chart = this.$echarts.init(document.querySelector(".line-chart"));
+    const pieChart = this.$echarts.init(document.querySelector(".pie-chart"));
+    const barChart = this.$echarts.init(document.querySelector(".bar-chart"));
     const options = {
       legend: {
         type: "plain",

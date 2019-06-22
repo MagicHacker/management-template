@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import Axios from "axios";
 import {
   Form,
   FormItem,
@@ -61,6 +62,7 @@ Vue.config.productionTip = false;
 });
 Vue.prototype.$echarts = Echarts;
 Vue.prototype.$message = Message;
+Vue.prototype.$axios = Axios;
 new Vue({
   router,
   store,

@@ -1,5 +1,6 @@
 module.exports = {
   devServer: {
-    before: require("./mock")
+    before: require("./mock"),
+    hotOnly: true
   }
 };

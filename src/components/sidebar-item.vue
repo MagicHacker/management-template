@@ -8,19 +8,32 @@
     >
       <router-link to="/mainPage">
         <el-menu-item index="1">
-          <img src="../assets/svg/dashboard.svg" alt />
-          首页
+          <el-row>
+            <el-col :span="8">
+              <img src="../assets/svg/dashboard.svg" alt />
+            </el-col>
+            <el-col :span="8">首页</el-col>
+          </el-row>
         </el-menu-item>
       </router-link>
       <router-link to="/iconPage">
         <el-menu-item index="2">
-          <img src="../assets/svg/icon.svg" alt />
-          图标
+          <el-row>
+            <el-col :span="8">
+              <img src="../assets/svg/icon.svg" alt />
+            </el-col>
+            <el-col :span="8">图标</el-col>
+          </el-row>
         </el-menu-item>
       </router-link>
       <el-submenu index="3">
         <template slot="title">
-          <img src="../assets/svg/chart.svg" alt />图表
+          <el-row>
+            <el-col :span="8">
+              <img src="../assets/svg/chart.svg" alt />
+            </el-col>
+            <el-col :span="8">图表</el-col>
+          </el-row>
         </template>
         <router-link to="/histogramChart">
           <el-menu-item index="3-1">柱状图</el-menu-item>
@@ -34,7 +47,12 @@
       </el-submenu>
       <el-submenu index="4">
         <template slot="title">
-          <img src="../assets/svg/table.svg" alt />表格
+          <el-row>
+            <el-col :span="8">
+              <img src="../assets/svg/table.svg" alt />
+            </el-col>
+            <el-col :span="8">表格</el-col>
+          </el-row>
         </template>
         <router-link to="/normalTable">
           <el-menu-item index="4-1">普通表格</el-menu-item>
@@ -48,7 +66,12 @@
       </el-submenu>
       <el-submenu index="5">
         <template slot="title">
-          <img src="../assets/svg/form.svg" alt />表单
+          <el-row>
+            <el-col :span="8">
+              <img src="../assets/svg/form.svg" alt />
+            </el-col>
+            <el-col :span="8">表单</el-col>
+          </el-row>
         </template>
         <router-link to="/normalForm">
           <el-menu-item index="5-1">普通表单</el-menu-item>
@@ -59,7 +82,12 @@
       </el-submenu>
       <el-submenu index="6">
         <template slot="title">
-          <img src="../assets/svg/component.svg" alt />组件
+          <el-row>
+            <el-col :span="8">
+              <img src="../assets/svg/component.svg" alt />
+            </el-col>
+            <el-col :span="8">组件</el-col>
+          </el-row>
         </template>
         <router-link to="/componentsList">
           <el-menu-item index="6-1">小组件列表</el-menu-item>
@@ -70,7 +98,12 @@
       </el-submenu>
       <el-submenu index="7">
         <template slot="title">
-          <img src="../assets/svg/error.svg" alt />错误页面
+          <el-row>
+            <el-col :span="8">
+              <img src="../assets/svg/error.svg" alt />
+            </el-col>
+            <el-col :span="8">错误页面</el-col>
+          </el-row>
         </template>
         <router-link to="/clientError">
           <el-menu-item index="7-1">404</el-menu-item>
@@ -81,14 +114,22 @@
       </el-submenu>
       <router-link to="/todoLists">
         <el-menu-item index="8">
-          <img src="../assets/svg/todo.svg" alt />
-          Todo Lists
+          <el-row>
+            <el-col :span="8">
+              <img src="../assets/svg/todo.svg" alt />
+            </el-col>
+            <el-col :span="8">Todo Lists</el-col>
+          </el-row>
         </el-menu-item>
       </router-link>
       <router-link to="/personCenter">
         <el-menu-item index="9">
-          <img src="../assets/svg/person.svg" alt />
-          个人中心
+          <el-row>
+            <el-col :span="8">
+              <img src="../assets/svg/person.svg" alt />
+            </el-col>
+            <el-col :span="8">个人中心</el-col>
+          </el-row>
         </el-menu-item>
       </router-link>
     </el-menu>

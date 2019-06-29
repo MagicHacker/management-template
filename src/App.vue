@@ -37,4 +37,11 @@ ul {
 a {
   text-decoration: none;
 }
+.icon {
+  width: 50px;
+  height: 50px;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 </style>

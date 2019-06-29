@@ -1,9 +1,12 @@
 <template>
-  <svg></svg>
+  <svg class="icon" aria-hidden="true">
+    <use :xlink:href="symbol"></use>
+  </svg>
 </template>
 <script>
 export default {
-  name: "IconSvg"
+  name: "IconSvg",
+  props: ["symbol"]
 };
 </script>
 <style lang="scss"></style>

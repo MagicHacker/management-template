@@ -136,12 +136,9 @@
   </div>
 </template>
 <script>
-import IconSvg from "./icon-svg";
 export default {
   name: "SideBarItem",
-  components: {
-    IconSvg
-  }
+  components: {}
 };
 </script>
 <style lang="scss">

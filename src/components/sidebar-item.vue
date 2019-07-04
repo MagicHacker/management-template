@@ -20,7 +20,7 @@
         <el-menu-item index="2">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#iconi"></icon-svg>
+              <icon-svg symbol="#icon-icon"></icon-svg>
             </el-col>
             <el-col :span="8">图标</el-col>
           </el-row>

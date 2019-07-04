@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import Axios from "axios";
-import "./icon/iconfont";
+import "./icon";
 import {
   Form,
   FormItem,
@@ -31,7 +31,6 @@ import {
   Icon
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-import IconSvg from "./components/icon-svg.vue";
 require("echarts/lib/chart/bar");
 require("echarts/lib/chart/line");
 require("echarts/lib/component/tooltip");
@@ -70,8 +69,6 @@ Vue.config.productionTip = false;
 Vue.prototype.$echarts = Echarts;
 Vue.prototype.$message = Message;
 Vue.prototype.$axios = Axios;
-// 全局注册图标组件
-Vue.component("icon-svg", IconSvg);
 new Vue({
   router,
   store,

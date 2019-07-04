@@ -38,8 +38,8 @@ a {
   text-decoration: none;
 }
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 1.5em;
+  height: 1.5em;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;

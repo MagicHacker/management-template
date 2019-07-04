@@ -2,8 +2,7 @@ const path = require("path");
 const resolve = dir => path.join(__dirname, dir);
 module.exports = {
   devServer: {
-    before: require("./mock"),
-    hotOnly: true
+    before: require("./mock")
   },
   chainWebpack: config => {
     config.module

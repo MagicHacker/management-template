@@ -1,9 +1,31 @@
 <template>
-  <div>图标</div>
+  <el-tabs v-model="activeItem" class="icon-wrap">
+    <el-tab-pane label="Element-UI Icons" name="first">
+      <element-icon></element-icon>
+    </el-tab-pane>
+    <el-tab-pane label="customized Icons" name="customized">
+      <customized-icon></customized-icon>
+    </el-tab-pane>
+  </el-tabs>
 </template>
 <script>
+import ElementIcon from "./element-icon";
+import CustomizedIcon from "./customized-icon";
 export default {
-  name: "IconPage"
+  name: "IconPage",
+  data() {
+    return {
+      activeItem: "customized"
+    };
+  },
+  components: {
+    ElementIcon,
+    CustomizedIcon
+  }
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.icon-wrap {
+  padding-left: 15px;
+}
+</style>

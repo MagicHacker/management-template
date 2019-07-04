@@ -25,7 +25,9 @@ import {
   Progress,
   ColorPicker,
   Row,
-  Col
+  Col,
+  Tabs,
+  TabPane
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import IconSvg from "./components/icon-svg.vue";
@@ -37,7 +39,6 @@ require("echarts/lib/component/legend");
 require("echarts/lib/chart/pie");
 const Echarts = require("echarts/lib/echarts");
 Vue.config.productionTip = false;
-
 [
   Form,
   FormItem,
@@ -58,7 +59,9 @@ Vue.config.productionTip = false;
   Progress,
   ColorPicker,
   Row,
-  Col
+  Col,
+  Tabs,
+  TabPane
 ].forEach(item => {
   Vue.use(item);
 });

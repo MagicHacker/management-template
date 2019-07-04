@@ -27,7 +27,8 @@ import {
   Row,
   Col,
   Tabs,
-  TabPane
+  TabPane,
+  Icon
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import IconSvg from "./components/icon-svg.vue";
@@ -61,7 +62,8 @@ Vue.config.productionTip = false;
   Row,
   Col,
   Tabs,
-  TabPane
+  TabPane,
+  Icon
 ].forEach(item => {
   Vue.use(item);
 });

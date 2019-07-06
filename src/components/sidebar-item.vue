@@ -10,7 +10,7 @@
         <el-menu-item index="1">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#icon-dashboard"></icon-svg>
+              <icon-svg symbol="icon-dashboard"></icon-svg>
             </el-col>
             <el-col :span="8">首页</el-col>
           </el-row>
@@ -20,7 +20,7 @@
         <el-menu-item index="2">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#icon-icon"></icon-svg>
+              <icon-svg symbol="icon-icon"></icon-svg>
             </el-col>
             <el-col :span="8">图标</el-col>
           </el-row>
@@ -30,7 +30,7 @@
         <template slot="title">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#icon-chart"></icon-svg>
+              <icon-svg symbol="icon-chart"></icon-svg>
             </el-col>
             <el-col :span="8">图表</el-col>
           </el-row>
@@ -49,7 +49,7 @@
         <template slot="title">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#icon-table"></icon-svg>
+              <icon-svg symbol="icon-table"></icon-svg>
             </el-col>
             <el-col :span="8">表格</el-col>
           </el-row>
@@ -68,7 +68,7 @@
         <template slot="title">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#icon-form"></icon-svg>
+              <icon-svg symbol="icon-form"></icon-svg>
             </el-col>
             <el-col :span="8">表单</el-col>
           </el-row>
@@ -84,7 +84,7 @@
         <template slot="title">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#icon-component"></icon-svg>
+              <icon-svg symbol="icon-component"></icon-svg>
             </el-col>
             <el-col :span="8">组件</el-col>
           </el-row>
@@ -100,7 +100,7 @@
         <template slot="title">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#icon-error"></icon-svg>
+              <icon-svg symbol="icon-error"></icon-svg>
             </el-col>
             <el-col :span="8">错误页面</el-col>
           </el-row>
@@ -116,7 +116,7 @@
         <el-menu-item index="8">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#icon-todo"></icon-svg>
+              <icon-svg symbol="icon-todo"></icon-svg>
             </el-col>
             <el-col :span="8">Todo Lists</el-col>
           </el-row>
@@ -126,7 +126,7 @@
         <el-menu-item index="9">
           <el-row>
             <el-col :span="8">
-              <icon-svg symbol="#icon-person"></icon-svg>
+              <icon-svg symbol="icon-person"></icon-svg>
             </el-col>
             <el-col :span="8">个人中心</el-col>
           </el-row>

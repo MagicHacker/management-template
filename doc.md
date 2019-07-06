@@ -56,6 +56,20 @@ git pull origin branch(分支名)：将远程代码拉取到本地并合并。
 
 git push origin branch：将本地仓库的修改推送到远程仓库。
 
+git branch：查看本地分支。
+
+git branch -a：查看所有分支，包括本地分支和远程分支。
+
+git branch name：创建本地分支。
+
+git checkout branchname：切换到分支。
+
+git checkout -b branchname：创建并切换本地分支。
+
+git push origin branchname:branchname：推送本地新建的分支到远程分支。
+
+git branch -d branchname：删除本地分支。
+
 ### 图标组件的使用
 
 图标已经封装并注册成全局组件，可以直接使用。将下载好的 svg 图标导入 icon/svg 中，运行时会自动将 svg 合成 svg-sprite，然后给图标组件传入 symbolID 即可。

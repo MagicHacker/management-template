@@ -28,7 +28,8 @@ import {
   Col,
   Tabs,
   TabPane,
-  Icon
+  Icon,
+  Checkbox
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 require("echarts/lib/chart/bar");
@@ -62,7 +63,8 @@ Vue.config.productionTip = false;
   Col,
   Tabs,
   TabPane,
-  Icon
+  Icon,
+  Checkbox
 ].forEach(item => {
   Vue.use(item);
 });

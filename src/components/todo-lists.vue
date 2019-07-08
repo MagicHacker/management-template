@@ -36,7 +36,7 @@ export default {
     addTask(event) {
       let { value } = event.target;
       if (event.keyCode === 13) {
-        this.todoList.push(value);
+        this.todoList.unshift(value);
         event.target.value = "";
       }
     },

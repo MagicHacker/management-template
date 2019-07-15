@@ -41,7 +41,24 @@ export default {
       }
     },
     delItem(event, index) {
-      this.todoList.splice(index, 1);
+      this.$confirm("是否删除", {
+        type: "warning",
+        confirmButtonText: "确定",
+        cancelButtonText: "取消"
+      })
+        .then(() => {
+          this.todoList.splice(index, 1);
+          this.$message({
+            type: "success",
+            message: "删除成功"
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "取消删除"
+          });
+        });
     }
   }
 };

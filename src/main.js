@@ -29,7 +29,8 @@ import {
   Tabs,
   TabPane,
   Icon,
-  Checkbox
+  Checkbox,
+  MessageBox
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 require("echarts/lib/chart/bar");
@@ -71,6 +72,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$echarts = Echarts;
 Vue.prototype.$message = Message;
 Vue.prototype.$axios = Axios;
+Vue.prototype.$confirm = MessageBox.confirm;
 new Vue({
   router,
   store,

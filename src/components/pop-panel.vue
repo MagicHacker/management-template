@@ -1,21 +1,39 @@
 <template>
-  <div class="pop-wrap">弹框</div>
+  <div class="pop-wrap">
+    <header>
+      <el-row>
+        <el-col :span="12">{{ popItem.name }}</el-col>
+        <el-col :span="6" :offset="6">{{ popItem.time }}</el-col>
+      </el-row>
+    </header>
+    <div class="pop-content">{{ popItem.content }}</div>
+  </div>
 </template>
 <script>
 export default {
-  name: "PopPanel"
+  name: "PopPanel",
+  data() {
+    return {
+      name: "名字",
+      time: "时间",
+      content: "xx"
+    };
+  },
+  props: {
+    popItem: {
+      type: Object
+    }
+  }
 };
 </script>
 <style lang="scss">
 .pop-wrap {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  right: 200px;
-  top: 100px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px gray;
-  background-color: #fff;
+  width: 100%;
+  header {
+    background-color: #c7c2c2;
+  }
+  .pop-content {
+    font-size: 16px;
+  }
 }
 </style>

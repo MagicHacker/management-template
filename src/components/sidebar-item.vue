@@ -5,6 +5,7 @@
       text-color="#fff"
       active-text-color="#0fecde"
       :unique-opened="true"
+      default-active="1"
     >
       <router-link to="/mainPage">
         <el-menu-item index="1">

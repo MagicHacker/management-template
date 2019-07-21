@@ -74,15 +74,16 @@ export default {
     width: 700px;
     margin: 0 auto;
     input {
-      width: 300px;
+      width: 500px;
       height: 36px;
       border-radius: 5px;
       font-size: 20px;
       outline-color: #fff;
+      border: 1px solid #bfc5bf;
     }
   }
   ul {
-    width: 300px;
+    width: 500px;
     margin: 0 auto;
     .list-item {
       width: 100%;

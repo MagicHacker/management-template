@@ -97,14 +97,14 @@ export default {
       actual: ""
     };
   },
-  created() {
-    this.$axios.get("/main-panel").then(res => {
+  created() {},
+  // TODO: 待优化
+  async mounted() {
+    await this.$axios.get("/main-panel").then(res => {
       this.mainPanel = res.data.data;
       this.excepted = res.data.excepted;
       this.actual = res.data.actual;
     });
-  },
-  mounted() {
     const chart = this.$echarts.init(document.querySelector(".line-chart"));
     const pieChart = this.$echarts.init(document.querySelector(".pie-chart"));
     const barChart = this.$echarts.init(document.querySelector(".bar-chart"));
@@ -179,10 +179,10 @@ export default {
             }
           },
           data: [
-            { value: 10, name: "邮件" },
-            { value: 5, name: "访客" },
-            { value: 15, name: "信息" },
-            { value: 25, name: "任务" }
+            { value: this.mainPanel.emailCount, name: "邮件" },
+            { value: this.mainPanel.visitorCount, name: "访客" },
+            { value: this.mainPanel.messageCount, name: "信息" },
+            { value: this.mainPanel.taskCount, name: "任务" }
           ]
         }
       ]
@@ -213,12 +213,12 @@ export default {
         {
           name: "预计",
           type: "bar",
-          data: [5, 20, 36, 10, 10, 20, 50]
+          data: this.excepted
         },
         {
           name: "实际",
           type: "bar",
-          data: [3, 10, 20, 5, 5, 10, 30]
+          data: this.actual
         }
       ]
     };

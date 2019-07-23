@@ -1,0 +1,11 @@
+{
+  "error": 0,
+  "data": {
+    "emailCount|100-9999": 1,
+    "visitorCount|100-9999": 0,
+    "messageCount|100-1000": 0,
+    "taskCount|0-100": 0
+  },
+  "excepted|7": ["@integer(60, 100)"],
+  "actual|7": ["@integer(20, 60)"]
+}

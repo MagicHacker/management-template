@@ -10,7 +10,7 @@
           <el-row>
             <el-col :span="12">
               <p>邮件</p>
-              <p>23,232</p>
+              <p>{{ mainPanel.emailCount }}</p>
             </el-col>
             <el-col :span="12">
               <img src="../assets/svg/email-item.svg" alt />
@@ -27,7 +27,7 @@
           <el-row>
             <el-col :span="12">
               <p>访客</p>
-              <p>123</p>
+              <p>{{ mainPanel.visitorCount }}</p>
             </el-col>
             <el-col :span="12">
               <img src="../assets/svg/visitors.svg" alt />
@@ -44,7 +44,7 @@
           <el-row>
             <el-col :span="12">
               <p>信息</p>
-              <p>123</p>
+              <p>{{ mainPanel.messageCount }}</p>
             </el-col>
             <el-col :span="12">
               <img src="../assets/svg/message-item.svg" alt />
@@ -61,7 +61,7 @@
           <el-row>
             <el-col :span="12">
               <p>任务</p>
-              <p>123</p>
+              <p>{{ mainPanel.taskCount }}</p>
             </el-col>
             <el-col :span="12">
               <img src="../assets/svg/task-item.svg" alt />
@@ -91,7 +91,18 @@
 export default {
   name: "MainPage",
   data() {
-    return {};
+    return {
+      mainPanel: "",
+      excepted: "",
+      actual: ""
+    };
+  },
+  created() {
+    this.$axios.get("/main-panel").then(res => {
+      this.mainPanel = res.data.data;
+      this.excepted = res.data.excepted;
+      this.actual = res.data.actual;
+    });
   },
   mounted() {
     const chart = this.$echarts.init(document.querySelector(".line-chart"));
@@ -131,12 +142,12 @@ export default {
         {
           name: "预计",
           type: "line",
-          data: [5, 20, 36, 10, 10, 20, 50]
+          data: this.excepted
         },
         {
           name: "实际",
           type: "line",
-          data: [3, 10, 20, 5, 5, 10, 30]
+          data: this.actual
         }
       ]
     };
@@ -219,7 +230,8 @@ export default {
       pieChart.resize();
       barChart.resize();
     };
-  }
+  },
+  methods: {}
 };
 </script>
 <style lang="scss" scoped>

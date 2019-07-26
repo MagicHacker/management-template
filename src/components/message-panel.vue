@@ -6,23 +6,21 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li class="list-item" v-for="(n, index) in 5" :key="index">
+        <li class="list-item" v-for="(item, index) in datas" :key="index">
           <el-popover placement="bottom" width="200" trigger="click">
             <pop-panel
               :pop-item="{
-                name: '名称',
-                content: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+                name: item.name,
+                content: item.content
               }"
             ></pop-panel>
             <div slot="reference" class="list-slot">
               <img src="../assets/Belle.jpg" alt />
               <div class="list-content">
                 <div class="list-header">
-                  <span>David Belle</span>
+                  <span>{{ item.name }}</span>
                 </div>
-                <p>
-                  Cum sociis natoque penatibus et magnis dis parturient montes
-                </p>
+                <p>{{ item.content }}</p>
               </div>
             </div>
           </el-popover>
@@ -35,6 +33,16 @@
 import PopPanel from "./pop-panel";
 export default {
   name: "EmailPanel",
+  data() {
+    return {
+      datas: []
+    };
+  },
+  mounted() {
+    this.$axios.get("/message-panel").then(res => {
+      this.datas = res.data.datas;
+    });
+  },
   components: {
     PopPanel
   },

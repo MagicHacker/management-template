@@ -6,9 +6,9 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li v-for="(n, index) in 5" :key="index" class="list-item">
-          <p>Python</p>
-          <el-Progress :percentage="50"></el-Progress>
+        <li v-for="(item, index) in datas" :key="index" class="list-item">
+          <p>{{ item.name }}</p>
+          <el-Progress :percentage="item.percent"></el-Progress>
         </li>
       </ul>
     </div>
@@ -16,7 +16,17 @@
 </template>
 <script>
 export default {
-  name: "TaskPanel"
+  name: "TaskPanel",
+  data() {
+    return {
+      datas: []
+    };
+  },
+  mounted() {
+    this.$axios.get("/task-panel").then(res => {
+      this.datas = res.data.datas;
+    });
+  }
 };
 </script>
 <style lang="scss" scoped>

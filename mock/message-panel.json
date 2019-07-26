@@ -1,0 +1,8 @@
+{
+  "datas|5": [
+    {
+      "name": "@name",
+      "content": "@sentence(1,4)"
+    }
+  ]
+}

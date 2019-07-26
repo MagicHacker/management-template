@@ -13,6 +13,12 @@ module.exports = app => {
   app.get("/email-panel", (req, res) => {
     mockJson(res, "./email-panel.json");
   });
+  app.get("/message-panel", (req, res) => {
+    mockJson(res, "./message-panel.json");
+  });
+  app.get("/task-panel", (req, res) => {
+    mockJson(res, "./task-panel.json");
+  });
 };
 
 const mockJson = (res, jsonFile) => {

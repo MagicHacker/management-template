@@ -3,7 +3,7 @@
     <header>
       <el-row>
         <el-col :span="12">{{ popItem.name }}</el-col>
-        <el-col :span="6" :offset="6">{{ popItem.time }}</el-col>
+        <el-col :span="7" :offset="5">{{ popItem.time }}</el-col>
       </el-row>
     </header>
     <div class="pop-content">{{ popItem.content }}</div>
@@ -34,6 +34,7 @@ export default {
   }
   .pop-content {
     font-size: 16px;
+    margin-top: 10px;
   }
 }
 </style>

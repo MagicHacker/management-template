@@ -7,7 +7,7 @@
     <div class="panel-body">
       <ul>
         <li class="list-item" v-for="(item, index) in datas" :key="index">
-          <el-popover placement="bottom" width="200" trigger="click">
+          <el-popover placement="bottom" width="250" trigger="click">
             <pop-panel
               :pop-item="{
                 name: item.name,

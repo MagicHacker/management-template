@@ -16,21 +16,21 @@
       <ul>
         <li v-popover:emailPop>
           <el-tooltip effect="dark" content="邮件" placement="bottom">
-            <el-badge :value="3">
+            <el-badge :value="dataBadge.emailBadge" :max="99">
               <img src="../assets/svg/email.svg" alt />
             </el-badge>
           </el-tooltip>
         </li>
         <li v-popover:messagePop>
           <el-tooltip effect="dark" content="信息" placement="bottom">
-            <el-badge :value="3">
+            <el-badge :value="dataBadge.messageBadge" :max="99">
               <img src="../assets/svg/bell.svg" alt />
             </el-badge>
           </el-tooltip>
         </li>
         <li v-popover:tasksPop>
           <el-tooltip effect="dark" content="任务" placement="bottom">
-            <el-badge :value="3">
+            <el-badge :value="dataBadge.taskBadge" :max="99">
               <img src="../assets/svg/tasks.svg" alt />
             </el-badge>
           </el-tooltip>
@@ -88,6 +88,7 @@ export default {
   name: "HeaderItem",
   data() {
     return {
+      dataBadge: "",
       color: "#FF8C00",
       predefineColors: [
         "#ff4500",
@@ -107,6 +108,11 @@ export default {
       ],
       sideBarOpen: false
     };
+  },
+  mounted() {
+    this.$axios.get("/badge").then(res => {
+      this.dataBadge = res.data.data;
+    });
   },
   components: {
     EmailPanel,

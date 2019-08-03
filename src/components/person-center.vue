@@ -1,6 +1,6 @@
 <template>
   <div class="person-wrap">
-    <div class="person-detail">
+    <el-card class="person-detail">
       <div>
         <img src="../assets/Belle.jpg" alt />
         <h4>MagicHacker</h4>
@@ -57,8 +57,9 @@
           <el-button type="danger">Gmail</el-button>
         </el-button-group>
       </div>
-    </div>
-    <div class="person-setting">
+    </el-card>
+    <el-card class="person-setting">
+      <h4>资料设置</h4>
       <el-form label-width="80px">
         <el-form-item label="Name">
           <el-input></el-input>
@@ -80,7 +81,7 @@
           <el-button>重置</el-button>
         </el-form-item>
       </el-form>
-    </div>
+    </el-card>
   </div>
 </template>
 <script>
@@ -93,8 +94,9 @@ export default {
   width: 100%;
   position: relative;
   .person-detail {
-    width: 450px;
+    width: 50%;
     float: left;
+    height: 510px;
     padding: 15px;
     .person-connect {
       text-align: left;
@@ -111,6 +113,9 @@ export default {
   }
   .person-setting {
     overflow: hidden;
+    height: 510px;
+    padding: 15px;
+    margin-left: 20px;
   }
 }
 </style>

@@ -19,6 +19,9 @@ module.exports = app => {
   app.get("/task-panel", (req, res) => {
     mockJson(res, "./task-panel.json");
   });
+  app.get("/badge", (req, res) => {
+    mockJson(res, "./badge.json");
+  });
 };
 
 const mockJson = (res, jsonFile) => {

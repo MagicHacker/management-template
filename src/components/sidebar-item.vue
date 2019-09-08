@@ -17,7 +17,7 @@
           </el-row>
         </el-menu-item>
       </router-link>
-      <router-link to="/iconPage">
+      <router-link to="/c">
         <el-menu-item index="2">
           <el-row>
             <el-col :span="8">
@@ -91,10 +91,10 @@
           </el-row>
         </template>
         <router-link to="/componentsList">
-          <el-menu-item index="6-1">小组件列表</el-menu-item>
+          <el-menu-item index="6-1">组件列表</el-menu-item>
         </router-link>
         <router-link to="/markdown">
-          <el-menu-item index="6-2">MarkDown</el-menu-item>
+          <el-menu-item index="6-2">Markdown</el-menu-item>
         </router-link>
       </el-submenu>
       <el-submenu index="7">
@@ -123,8 +123,18 @@
           </el-row>
         </el-menu-item>
       </router-link>
-      <router-link to="/personCenter">
+      <router-link to="/photoWall">
         <el-menu-item index="9">
+          <el-row>
+            <el-col :span="8">
+              <icon-svg symbol="icon-photo"></icon-svg>
+            </el-col>
+            <el-col :span="8">照片墙</el-col>
+          </el-row>
+        </el-menu-item>
+      </router-link>
+      <router-link to="/personCenter">
+        <el-menu-item index="10">
           <el-row>
             <el-col :span="8">
               <icon-svg symbol="icon-person"></icon-svg>

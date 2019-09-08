@@ -1,5 +1,5 @@
 <template>
-  <div>小组件列表</div>
+  <div>组件列表</div>
 </template>
 <script>
 export default {

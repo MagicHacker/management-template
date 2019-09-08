@@ -96,6 +96,9 @@
         <router-link to="/markdown">
           <el-menu-item index="6-2">Markdown</el-menu-item>
         </router-link>
+        <router-link to="/richTextEditor">
+          <el-menu-item index="6-3">富文本编辑器</el-menu-item>
+        </router-link>
       </el-submenu>
       <el-submenu index="7">
         <template slot="title">

@@ -18,6 +18,7 @@ import ServerError from "./components/server-error.vue";
 import TodoLists from "./components/todo-lists.vue";
 import MainPage from "./components/main-page.vue";
 import PhotoWall from "./components/photo-wall.vue";
+import RichTextEditor from "./components/richText-editor.vue";
 import PersonCenter from "./components/person-center.vue";
 Vue.use(Router);
 
@@ -82,6 +83,10 @@ export default new Router({
         {
           path: "/markdown",
           component: MarkdownItem
+        },
+        {
+          path: "/richTextEditor",
+          component: RichTextEditor
         },
         {
           path: "/clientError",

@@ -1,0 +1,20 @@
+{
+  "singleQuote": true,
+  "printWidth": 80,
+  "semi": false,
+  "overrides": [
+    {
+      "files": [
+        "*.json",
+        ".eslintrc",
+        ".tslintrc",
+        ".prettierrc",
+        ".tern-project"
+      ],
+      "options": {
+        "parser": "json",
+        "tabWidth": 2
+      }
+    }
+  ]
+}

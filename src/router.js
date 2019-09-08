@@ -17,6 +17,8 @@ import ClientError from "./components/client-error.vue";
 import ServerError from "./components/server-error.vue";
 import TodoLists from "./components/todo-lists.vue";
 import MainPage from "./components/main-page.vue";
+import PhotoWall from "./components/photo-wall.vue";
+import RichTextEditor from "./components/richText-editor.vue";
 import PersonCenter from "./components/person-center.vue";
 Vue.use(Router);
 
@@ -83,6 +85,10 @@ export default new Router({
           component: MarkdownItem
         },
         {
+          path: "/richTextEditor",
+          component: RichTextEditor
+        },
+        {
           path: "/clientError",
           component: ClientError
         },
@@ -93,6 +99,10 @@ export default new Router({
         {
           path: "/todoLists",
           component: TodoLists
+        },
+        {
+          path: "/photoWall",
+          component: PhotoWall
         },
         {
           path: "/personCenter",

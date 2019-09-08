@@ -92,11 +92,15 @@ export default {
 <style lang="scss" scoped>
 .person-wrap {
   width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 15px;
   position: relative;
   .person-detail {
     width: 50%;
     float: left;
-    height: 510px;
+    height: 100%;
+    margin-right: 15px;
     padding: 15px;
     .person-connect {
       text-align: left;
@@ -113,7 +117,7 @@ export default {
   }
   .person-setting {
     overflow: hidden;
-    height: 510px;
+    height: 100%;
     padding: 15px;
     margin-left: 20px;
   }

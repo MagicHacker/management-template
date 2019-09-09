@@ -13,7 +13,7 @@
     "core-js": "^2.6.5",
     "echarts": "^4.2.1",
     "element-ui": "^2.9.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "mockjs": "^1.0.1-beta3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",

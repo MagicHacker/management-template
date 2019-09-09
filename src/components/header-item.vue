@@ -1,16 +1,9 @@
 <template>
   <div class="header-wrap">
-    <div class="header-left">
-      <ul>
-        <li>
-          <span>管理系统模板</span>
-        </li>
-        <li @click="toggleSideBar">
-          <el-tooltip effect="dark" content="菜单栏收缩" placement="bottom">
-            <img src="../assets/svg/hamburger.svg" />
-          </el-tooltip>
-        </li>
-      </ul>
+    <div class="header-left" @click="toggleSideBar">
+      <el-tooltip effect="dark" content="菜单栏收缩" placement="bottom">
+        <img src="../assets/svg/hamburger.svg" />
+      </el-tooltip>
     </div>
     <div class="header-right">
       <ul>
@@ -37,32 +30,18 @@
         </li>
         <li v-popover:colorPop class="palette-item">
           <el-tooltip effect="dark" content="调色板" placement="bottom">
-            <el-color-picker
-              v-model="color"
-              size="small"
-              :predefine="predefineColors"
-            ></el-color-picker>
+            <el-color-picker v-model="color" size="small" :predefine="predefineColors"></el-color-picker>
           </el-tooltip>
         </li>
         <li v-popover:personPop>
           <el-tooltip effect="dark" content="个人中心" placement="bottom">
-            <el-dropdown
-              trigger="click"
-              placement="bottom"
-              @command="handleCommand"
-            >
+            <el-dropdown trigger="click" placement="bottom" @command="handleCommand">
               <img src="../assets/svg/person.svg" alt />
               <el-dropdown-menu>
-                <el-dropdown-item command="personalCenter"
-                  >个人中心</el-dropdown-item
-                >
+                <el-dropdown-item command="personalCenter">个人中心</el-dropdown-item>
                 <el-dropdown-item command="mainpage">首页</el-dropdown-item>
-                <el-dropdown-item command="projectAddress"
-                  >项目地址</el-dropdown-item
-                >
-                <el-dropdown-item divided command="signOut"
-                  >退出登录</el-dropdown-item
-                >
+                <el-dropdown-item command="projectAddress">项目地址</el-dropdown-item>
+                <el-dropdown-item divided command="signOut">退出登录</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </el-tooltip>
@@ -121,6 +100,7 @@ export default {
   },
   methods: {
     toggleSideBar() {
+      alert(1);
       this.sideBarOpen = !this.sideBarOpen;
     },
     handleCommand(command) {
@@ -147,6 +127,7 @@ export default {
   width: 100%;
   height: 50px;
   background-color: rgb(100, 123, 148);
+  position: relative;
   ul {
     height: 100%;
   }
@@ -155,18 +136,10 @@ export default {
     cursor: pointer;
   }
   .header-left {
-    float: left;
-    height: 100%;
-    font-size: 20px;
-    line-height: 50px;
-    text-align: center;
-    color: #fff;
-    li:nth-child(1) {
-      width: 200px;
-    }
-    li:nth-child(2) img {
-      vertical-align: middle;
-    }
+    position: absolute;
+    left: 200px;
+    top: 10px;
+    cursor: pointer;
   }
   .header-right {
     float: right;

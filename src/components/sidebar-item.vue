@@ -6,35 +6,24 @@
       active-text-color="#0fecde"
       :unique-opened="true"
       default-active="1"
+      :collapse="false"
     >
       <router-link to="/mainPage">
         <el-menu-item index="1">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-dashboard"></icon-svg>
-            </el-col>
-            <el-col :span="8">首页</el-col>
-          </el-row>
+          <icon-svg symbol="icon-dashboard"></icon-svg>
+          <span slot="title">首页</span>
         </el-menu-item>
       </router-link>
       <router-link to="/c">
         <el-menu-item index="2">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-icon"></icon-svg>
-            </el-col>
-            <el-col :span="8">图标</el-col>
-          </el-row>
+          <icon-svg symbol="icon-icon"></icon-svg>
+          <span slot="title">图标</span>
         </el-menu-item>
       </router-link>
       <el-submenu index="3">
         <template slot="title">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-chart"></icon-svg>
-            </el-col>
-            <el-col :span="8">图表</el-col>
-          </el-row>
+          <icon-svg symbol="icon-chart"></icon-svg>
+          <span slot="title">图表</span>
         </template>
         <router-link to="/histogramChart">
           <el-menu-item index="3-1">柱状图</el-menu-item>
@@ -48,12 +37,8 @@
       </el-submenu>
       <el-submenu index="4">
         <template slot="title">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-table"></icon-svg>
-            </el-col>
-            <el-col :span="8">表格</el-col>
-          </el-row>
+          <icon-svg symbol="icon-table"></icon-svg>
+          <span slot="title">表格</span>
         </template>
         <router-link to="/normalTable">
           <el-menu-item index="4-1">普通表格</el-menu-item>
@@ -67,12 +52,8 @@
       </el-submenu>
       <el-submenu index="5">
         <template slot="title">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-form"></icon-svg>
-            </el-col>
-            <el-col :span="8">表单</el-col>
-          </el-row>
+          <icon-svg symbol="icon-form"></icon-svg>
+          <span slot="title">表单</span>
         </template>
         <router-link to="/normalForm">
           <el-menu-item index="5-1">普通表单</el-menu-item>
@@ -83,12 +64,8 @@
       </el-submenu>
       <el-submenu index="6">
         <template slot="title">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-component"></icon-svg>
-            </el-col>
-            <el-col :span="8">组件</el-col>
-          </el-row>
+          <icon-svg symbol="icon-component"></icon-svg>
+          <span slot="title">组件</span>
         </template>
         <router-link to="/componentsList">
           <el-menu-item index="6-1">组件列表</el-menu-item>
@@ -102,12 +79,8 @@
       </el-submenu>
       <el-submenu index="7">
         <template slot="title">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-error"></icon-svg>
-            </el-col>
-            <el-col :span="8">错误页面</el-col>
-          </el-row>
+          <icon-svg symbol="icon-error"></icon-svg>
+          <span slot="title">错误页面</span>
         </template>
         <router-link to="/clientError">
           <el-menu-item index="7-1">404</el-menu-item>
@@ -118,32 +91,20 @@
       </el-submenu>
       <router-link to="/todoLists">
         <el-menu-item index="8">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-todo"></icon-svg>
-            </el-col>
-            <el-col :span="8">Todo Lists</el-col>
-          </el-row>
+          <icon-svg symbol="icon-todo"></icon-svg>
+          <span slot="title">Todo Lists</span>
         </el-menu-item>
       </router-link>
       <router-link to="/photoWall">
         <el-menu-item index="9">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-photo"></icon-svg>
-            </el-col>
-            <el-col :span="8">照片墙</el-col>
-          </el-row>
+          <icon-svg symbol="icon-photo"></icon-svg>
+          <span slot="title">照片墙</span>
         </el-menu-item>
       </router-link>
       <router-link to="/personCenter">
         <el-menu-item index="10">
-          <el-row>
-            <el-col :span="8">
-              <icon-svg symbol="icon-person"></icon-svg>
-            </el-col>
-            <el-col :span="8">个人中心</el-col>
-          </el-row>
+          <icon-svg symbol="icon-person"></icon-svg>
+          <span slot="title">个人中心</span>
         </el-menu-item>
       </router-link>
     </el-menu>
@@ -166,6 +127,10 @@ export default {
   font-size: 20px;
   .el-submenu__title i {
     color: #fff;
+  }
+  span {
+    display: inline-block;
+    margin-left: 10px;
   }
   ul {
     border: none;

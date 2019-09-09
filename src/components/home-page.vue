@@ -3,7 +3,13 @@
     <header-item></header-item>
     <div class="main-wrap">
       <sidebar-item></sidebar-item>
-      <div class="body-wrap">
+      <div
+        class="body-wrap"
+        :style="{
+          width: `calc(100% - ${bodyLeft}px)`,
+          left: bodyLeft + 'px'
+        }"
+      >
         <router-view />
       </div>
     </div>
@@ -12,8 +18,18 @@
 <script>
 import HeaderItem from "./header-item";
 import SidebarItem from "./sidebar-item";
+import { mapState } from "vuex";
 export default {
   name: "HomePage",
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState(["sideBarOpen"]),
+    bodyLeft() {
+      return this.sideBarOpen ? 64 : 200;
+    }
+  },
   components: {
     HeaderItem,
     SidebarItem
@@ -37,7 +53,7 @@ export default {
       height: 100%;
       position: absolute;
       top: 0px;
-      left: 200px;
+      transition: left 0.28s;
     }
   }
 }

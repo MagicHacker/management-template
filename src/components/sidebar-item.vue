@@ -1,12 +1,13 @@
 <template>
-  <div class="sidebar-wrap">
+  <div class="sidebar-wrap" :style="{ width: sliderWidth + 'px' }">
     <el-menu
       background-color="#7c93aa"
       text-color="#fff"
       active-text-color="#0fecde"
       :unique-opened="true"
       default-active="1"
-      :collapse="false"
+      :collapse="sideBarOpen"
+      :collapse-transition="false"
     >
       <router-link to="/mainPage">
         <el-menu-item index="1">
@@ -111,14 +112,23 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   name: "SideBarItem",
-  components: {}
+  data() {
+    return {};
+  },
+  components: {},
+  computed: {
+    ...mapState(["sideBarOpen"]),
+    sliderWidth() {
+      return this.sideBarOpen ? 64 : 200;
+    }
+  }
 };
 </script>
 <style lang="scss">
 .sidebar-wrap {
-  width: 200px;
   position: fixed;
   top: 0px;
   left: 0px;

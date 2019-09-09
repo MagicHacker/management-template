@@ -1,6 +1,6 @@
 <template>
   <div class="header-wrap">
-    <div class="header-left" @click="toggleSideBar">
+    <div class="header-left" @click="toggleSideBar" :style="{ left: hamburgerLeft + 'px' }">
       <el-tooltip effect="dark" content="菜单栏收缩" placement="bottom">
         <img src="../assets/svg/hamburger.svg" />
       </el-tooltip>
@@ -63,6 +63,7 @@
 import EmailPanel from "./email-panel";
 import MessagePanel from "./message-panel";
 import TaskPanel from "./task-panel";
+import { mapActions, mapState } from "vuex";
 export default {
   name: "HeaderItem",
   data() {
@@ -85,7 +86,7 @@ export default {
         "hsla(209, 100%, 56%, 0.73)",
         "#c7158577"
       ],
-      sideBarOpen: false
+      isSideBarOpen: false
     };
   },
   mounted() {
@@ -98,10 +99,17 @@ export default {
     MessagePanel,
     TaskPanel
   },
+  computed: {
+    ...mapState(["sideBarOpen"]),
+    hamburgerLeft() {
+      return this.sideBarOpen ? 64 : 200;
+    }
+  },
   methods: {
+    ...mapActions(["changeSideBar"]),
     toggleSideBar() {
-      alert(1);
-      this.sideBarOpen = !this.sideBarOpen;
+      this.isSideBarOpen = !this.isSideBarOpen;
+      this.changeSideBar(this.isSideBarOpen);
     },
     handleCommand(command) {
       switch (command) {
@@ -137,7 +145,7 @@ export default {
   }
   .header-left {
     position: absolute;
-    left: 200px;
+    transition: left 0.28s;
     top: 10px;
     cursor: pointer;
   }

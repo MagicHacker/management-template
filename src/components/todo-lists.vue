@@ -65,6 +65,7 @@ export default {
 </script>
 <style lang="scss">
 .todo-wrap {
+  text-align: center;
   .lists-name {
     margin: 0px;
     background-color: rgb(218, 76, 66);

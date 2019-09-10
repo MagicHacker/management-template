@@ -471,6 +471,7 @@ export default {
 </script>
 <style lang="scss">
 .customized-wrap {
+  text-align: center;
   .icon-row {
     margin-top: 25px;
     .icon-svg {

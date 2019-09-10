@@ -1,12 +1,8 @@
 <template>
-  <div class="mainpage-wrap">
+  <div class="mainpage-wrap" :style="{ left: left + 'px' }">
     <el-row type="flex" class="dashboard-card" justify="space-around">
       <el-col :span="5">
-        <el-card
-          class="email-item"
-          shadow="always"
-          :body-style="{ color: '#fff' }"
-        >
+        <el-card class="email-item" shadow="always" :body-style="{ color: '#fff' }">
           <el-row>
             <el-col :span="12">
               <p>邮件</p>
@@ -19,11 +15,7 @@
         </el-card>
       </el-col>
       <el-col :span="5">
-        <el-card
-          class="visitor-item"
-          shadow="always"
-          :body-style="{ color: '#fff' }"
-        >
+        <el-card class="visitor-item" shadow="always" :body-style="{ color: '#fff' }">
           <el-row>
             <el-col :span="12">
               <p>访客</p>
@@ -36,11 +28,7 @@
         </el-card>
       </el-col>
       <el-col :span="5">
-        <el-card
-          class="message-item"
-          shadow="always"
-          :body-style="{ color: '#fff' }"
-        >
+        <el-card class="message-item" shadow="always" :body-style="{ color: '#fff' }">
           <el-row>
             <el-col :span="12">
               <p>信息</p>
@@ -53,11 +41,7 @@
         </el-card>
       </el-col>
       <el-col :span="5">
-        <el-card
-          class="task-item"
-          shadow="always"
-          :body-style="{ color: '#fff' }"
-        >
+        <el-card class="task-item" shadow="always" :body-style="{ color: '#fff' }">
           <el-row>
             <el-col :span="12">
               <p>任务</p>
@@ -88,6 +72,7 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   name: "MainPage",
   data() {
@@ -96,6 +81,13 @@ export default {
       excepted: "",
       actual: ""
     };
+  },
+  computed: {
+    ...mapState(["sideBarOpen"]),
+    // TODO: 待优化
+    left() {
+      return this.sideBarOpen ? 0 : 1;
+    }
   },
   created() {},
   // TODO: 待优化
@@ -230,6 +222,16 @@ export default {
       pieChart.resize();
       barChart.resize();
     };
+    const mainDom = document.querySelector(".mainpage-wrap");
+    mainDom.addEventListener(
+      "transitionend",
+      function() {
+        chart.resize();
+        pieChart.resize();
+        barChart.resize();
+      },
+      false
+    );
   },
   methods: {}
 };
@@ -237,6 +239,7 @@ export default {
 <style lang="scss" scoped>
 .mainpage-wrap {
   width: 100%;
+  transition: left 0.28s;
   ul li {
     display: inline-block;
   }

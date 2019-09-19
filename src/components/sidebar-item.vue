@@ -15,7 +15,7 @@
           <span slot="title">首页</span>
         </el-menu-item>
       </router-link>
-      <router-link to="/c">
+      <router-link to="/iconPage">
         <el-menu-item index="2">
           <icon-svg symbol="icon-icon"></icon-svg>
           <span slot="title">图标</span>

@@ -247,6 +247,7 @@ export default {
 </script>
 <style lang="scss">
 .element-wrap {
+  text-align: center;
   .icon-row {
     margin-top: 25px;
     i {

@@ -32,7 +32,7 @@
         <router-link to="/lineChart">
           <el-menu-item index="3-2">折线图</el-menu-item>
         </router-link>
-        <router-link to="pieChart">
+        <router-link to="/pieChart">
           <el-menu-item index="3-3">饼图</el-menu-item>
         </router-link>
       </el-submenu>

@@ -1,8 +1,11 @@
 <template>
   <div class="photo-wall-wrap">
-    <div class="photo-item" v-for="(item, index) in imageArr" :key="index">
-      <img :src="item.src" />
-    </div>
+    <img
+      :src="item"
+      class="photo-item"
+      v-for="(item, index) in imageArr"
+      :key="index"
+    />
   </div>
 </template>
 <script>
@@ -10,67 +13,28 @@ export default {
   name: "photoWall",
   data() {
     return {
+      // TODO: 待优化
       imageArr: [
-        {
-          src: "/public/images/Alps.jpg"
-        },
-        {
-          src: "/public/images/Avengers.jpg"
-        },
-        {
-          src: "/public/images/Bible.jpg"
-        },
-        {
-          src: "/public/images/Brand.jpg"
-        },
-        {
-          src: "/public/images/carb.jpg"
-        },
-        {
-          src: "/public/images/castle.jpg"
-        },
-        {
-          src: "/public/images/dinner.jpg"
-        },
-        {
-          src: "/public/images/dolphin.jpg"
-        },
-        {
-          src: "/public/images/dream.jpg"
-        },
-        {
-          src: "/public/images/dusk.jpg"
-        },
-        {
-          src: "/public/images/house.jpg"
-        },
-        {
-          src: "/public/images/Maldives.jpg"
-        },
-        {
-          src: "/public/images/Monaco.jpg"
-        },
-        {
-          src: "/public/images/Naruto.jpg"
-        },
-        {
-          src: "/public/images/Norway.jpg"
-        },
-        {
-          src: "/public/images/Phoenix.jpg"
-        },
-        {
-          src: "/public/images/Prague.jpg"
-        },
-        {
-          src: "/public/images/sky.jpg"
-        },
-        {
-          src: "/public/images/snow.jpg"
-        },
-        {
-          src: "/public/images/swing.jpg"
-        }
+        require("../assets/images/Alps.jpg"),
+        require("../assets/images/Avengers.jpg"),
+        require("../assets/images/Bible.jpg"),
+        require("../assets/images/Brand.jpg"),
+        require("../assets/images/carb.jpg"),
+        require("../assets/images/castle.jpg"),
+        require("../assets/images/dinner.jpg"),
+        require("../assets/images/dolphin.jpg"),
+        require("../assets/images/dream.jpg"),
+        require("../assets/images/dusk.jpg"),
+        require("../assets/images/house.jpg"),
+        require("../assets/images/Maldives.jpg"),
+        require("../assets/images/Monaco.jpg"),
+        require("../assets/images/Naruto.jpg"),
+        require("../assets/images/Norway.jpg"),
+        require("../assets/images/Phoenix.jpg"),
+        require("../assets/images/Prague.jpg"),
+        require("../assets/images/sky.jpg"),
+        require("../assets/images/snow.jpg"),
+        require("../assets/images/swing.jpg")
       ]
     };
   }
@@ -89,6 +53,7 @@ export default {
   .photo-item {
     width: 220px;
     height: 170px;
+    margin-bottom: 5px;
   }
 }
 </style>

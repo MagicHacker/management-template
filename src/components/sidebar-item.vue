@@ -32,7 +32,7 @@
         <router-link to="/lineChart">
           <el-menu-item index="3-2">折线图</el-menu-item>
         </router-link>
-        <router-link to="pieChart">
+        <router-link to="/pieChart">
           <el-menu-item index="3-3">饼图</el-menu-item>
         </router-link>
       </el-submenu>
@@ -99,7 +99,7 @@
       <router-link to="/photoWall">
         <el-menu-item index="9">
           <icon-svg symbol="icon-photo"></icon-svg>
-          <span slot="title">照片墙</span>
+          <span slot="title">懒加载照片墙</span>
         </el-menu-item>
       </router-link>
       <router-link to="/personCenter">

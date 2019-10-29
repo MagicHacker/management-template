@@ -53,7 +53,7 @@ export default {
   .photo-item {
     width: 220px;
     height: 170px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }
 </style>

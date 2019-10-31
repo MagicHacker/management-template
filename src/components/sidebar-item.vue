@@ -5,18 +5,18 @@
       text-color="#fff"
       active-text-color="#0fecde"
       :unique-opened="true"
-      default-active="1"
+      :default-active="routePath"
       :collapse="sideBarOpen"
       :collapse-transition="false"
     >
       <router-link to="/mainPage">
-        <el-menu-item index="1">
+        <el-menu-item index="/mainPage">
           <icon-svg symbol="icon-dashboard"></icon-svg>
           <span slot="title">首页</span>
         </el-menu-item>
       </router-link>
       <router-link to="/iconPage">
-        <el-menu-item index="2">
+        <el-menu-item index="/iconPage">
           <icon-svg symbol="icon-icon"></icon-svg>
           <span slot="title">图标</span>
         </el-menu-item>
@@ -27,13 +27,13 @@
           <span slot="title">图表</span>
         </template>
         <router-link to="/histogramChart">
-          <el-menu-item index="3-1">柱状图</el-menu-item>
+          <el-menu-item index="/histogramChart">柱状图</el-menu-item>
         </router-link>
         <router-link to="/lineChart">
-          <el-menu-item index="3-2">折线图</el-menu-item>
+          <el-menu-item index="/lineChart">折线图</el-menu-item>
         </router-link>
         <router-link to="/pieChart">
-          <el-menu-item index="3-3">饼图</el-menu-item>
+          <el-menu-item index="/pieChart">饼图</el-menu-item>
         </router-link>
       </el-submenu>
       <el-submenu index="4">
@@ -42,13 +42,13 @@
           <span slot="title">表格</span>
         </template>
         <router-link to="/normalTable">
-          <el-menu-item index="4-1">普通表格</el-menu-item>
+          <el-menu-item index="/normalTable">普通表格</el-menu-item>
         </router-link>
         <router-link to="/editableTable">
-          <el-menu-item index="4-2">可编辑表格</el-menu-item>
+          <el-menu-item index="/editableTable">可编辑表格</el-menu-item>
         </router-link>
         <router-link to="/customizedTable">
-          <el-menu-item index="4-3">自定义表格</el-menu-item>
+          <el-menu-item index="/customizedTable">自定义表格</el-menu-item>
         </router-link>
       </el-submenu>
       <el-submenu index="5">
@@ -57,10 +57,10 @@
           <span slot="title">表单</span>
         </template>
         <router-link to="/normalForm">
-          <el-menu-item index="5-1">普通表单</el-menu-item>
+          <el-menu-item index="/normalForm">普通表单</el-menu-item>
         </router-link>
         <router-link to="/customizedForm">
-          <el-menu-item index="5-2">自定义表单</el-menu-item>
+          <el-menu-item index="/customizedForm">自定义表单</el-menu-item>
         </router-link>
       </el-submenu>
       <el-submenu index="6">
@@ -69,13 +69,13 @@
           <span slot="title">组件</span>
         </template>
         <router-link to="/componentsList">
-          <el-menu-item index="6-1">组件列表</el-menu-item>
+          <el-menu-item index="/componentsList">组件列表</el-menu-item>
         </router-link>
         <router-link to="/markdown">
-          <el-menu-item index="6-2">Markdown</el-menu-item>
+          <el-menu-item index="/markdown">Markdown</el-menu-item>
         </router-link>
         <router-link to="/richTextEditor">
-          <el-menu-item index="6-3">富文本编辑器</el-menu-item>
+          <el-menu-item index="/richTextEditor">富文本编辑器</el-menu-item>
         </router-link>
       </el-submenu>
       <el-submenu index="7">
@@ -84,26 +84,26 @@
           <span slot="title">错误页面</span>
         </template>
         <router-link to="/clientError">
-          <el-menu-item index="7-1">404</el-menu-item>
+          <el-menu-item index="/clientError">404</el-menu-item>
         </router-link>
         <router-link to="/serverError">
-          <el-menu-item index="7-2">500</el-menu-item>
+          <el-menu-item index="/serverError">500</el-menu-item>
         </router-link>
       </el-submenu>
       <router-link to="/todoLists">
-        <el-menu-item index="8">
+        <el-menu-item index="/todoLists">
           <icon-svg symbol="icon-todo"></icon-svg>
           <span slot="title">Todo Lists</span>
         </el-menu-item>
       </router-link>
       <router-link to="/photoWall">
-        <el-menu-item index="9">
+        <el-menu-item index="/photoWall">
           <icon-svg symbol="icon-photo"></icon-svg>
           <span slot="title">懒加载照片墙</span>
         </el-menu-item>
       </router-link>
       <router-link to="/personCenter">
-        <el-menu-item index="10">
+        <el-menu-item index="/personCenter">
           <icon-svg symbol="icon-person"></icon-svg>
           <span slot="title">个人中心</span>
         </el-menu-item>
@@ -123,6 +123,9 @@ export default {
     ...mapState(["sideBarOpen"]),
     sliderWidth() {
       return this.sideBarOpen ? 64 : 200;
+    },
+    routePath() {
+      return this.$route.path;
     }
   }
 };

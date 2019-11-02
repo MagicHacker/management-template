@@ -10,7 +10,7 @@
             <img src="../assets/Belle.jpg" alt />
           </div>
           <div class="person-name">
-            <span>MagicHacker</span>
+            <span>{{ name }}</span>
           </div>
           <div class="person-connect">
             <div class="connect-title">
@@ -21,36 +21,20 @@
             </div>
             <ul class="connect-list">
               <li>
-                <el-row>
-                  <el-col :span="6">
-                    <icon-svg symbol="icon-twitter"></icon-svg>
-                  </el-col>
-                  <el-col :span="16">xxx</el-col>
-                </el-row>
+                <icon-svg symbol="icon-twitter"></icon-svg>
+                <div>{{ twitter }}</div>
               </li>
               <li>
-                <el-row>
-                  <el-col :span="6">
-                    <icon-svg symbol="icon-facebook"></icon-svg>
-                  </el-col>
-                  <el-col :span="16">xxxx</el-col>
-                </el-row>
+                <icon-svg symbol="icon-facebook"></icon-svg>
+                <div>{{ facebook }}</div>
               </li>
               <li>
-                <el-row>
-                  <el-col :span="6">
-                    <icon-svg symbol="icon-instagram"></icon-svg>
-                  </el-col>
-                  <el-col :span="16">xxx</el-col>
-                </el-row>
+                <icon-svg symbol="icon-instagram"></icon-svg>
+                <div>{{ instagram }}</div>
               </li>
               <li>
-                <el-row>
-                  <el-col :span="6">
-                    <icon-svg symbol="icon-phone"></icon-svg>
-                  </el-col>
-                  <el-col :span="16">xxx</el-col>
-                </el-row>
+                <icon-svg symbol="icon-phone"></icon-svg>
+                <div>{{ phone }}</div>
               </li>
             </ul>
           </div>
@@ -91,19 +75,19 @@
             <el-tab-pane label="Account">
               <el-form label-width="80px">
                 <el-form-item label="Name">
-                  <el-input></el-input>
+                  <el-input v-model="name"></el-input>
                 </el-form-item>
                 <el-form-item label="Twitter">
-                  <el-input></el-input>
+                  <el-input v-model="twitter"></el-input>
                 </el-form-item>
                 <el-form-item label="FaceBook">
-                  <el-input></el-input>
+                  <el-input v-model="facebook"></el-input>
                 </el-form-item>
                 <el-form-item label="Phone">
-                  <el-input></el-input>
+                  <el-input v-model="phone"></el-input>
                 </el-form-item>
                 <el-form-item label="Instagram">
-                  <el-input></el-input>
+                  <el-input v-model="instagram"></el-input>
                 </el-form-item>
                 <el-form-item>
                   <el-button type="primary">提交</el-button>
@@ -119,7 +103,16 @@
 </template>
 <script>
 export default {
-  name: "PersonCenter"
+  name: "PersonCenter",
+  data() {
+    return {
+      name: "MagicHacker",
+      twitter: "",
+      facebook: "",
+      phone: "",
+      instagram: ""
+    };
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -164,6 +157,15 @@ export default {
     .connect-list {
       width: 100%;
       margin-top: 10px;
+      li {
+        width: 100%;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        div {
+          margin-left: 10px;
+        }
+      }
     }
   }
   .person-about {

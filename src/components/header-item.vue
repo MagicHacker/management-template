@@ -1,6 +1,10 @@
 <template>
   <div class="header-wrap">
-    <div class="header-left" @click="toggleSideBar" :style="{ left: hamburgerLeft + 'px' }">
+    <div
+      class="header-left"
+      @click="toggleSideBar"
+      :style="{ left: hamburgerLeft + 'px' }"
+    >
       <el-tooltip effect="dark" content="菜单栏收缩" placement="bottom">
         <img src="../assets/svg/hamburger.svg" />
       </el-tooltip>
@@ -30,18 +34,32 @@
         </li>
         <li v-popover:colorPop class="palette-item">
           <el-tooltip effect="dark" content="调色板" placement="bottom">
-            <el-color-picker v-model="color" size="small" :predefine="predefineColors"></el-color-picker>
+            <el-color-picker
+              v-model="color"
+              size="small"
+              :predefine="predefineColors"
+            ></el-color-picker>
           </el-tooltip>
         </li>
         <li v-popover:personPop>
           <el-tooltip effect="dark" content="个人中心" placement="bottom">
-            <el-dropdown trigger="click" placement="bottom" @command="handleCommand">
+            <el-dropdown
+              trigger="click"
+              placement="bottom"
+              @command="handleCommand"
+            >
               <img src="../assets/svg/person.svg" alt />
               <el-dropdown-menu>
-                <el-dropdown-item command="personalCenter">个人中心</el-dropdown-item>
+                <el-dropdown-item command="personalCenter"
+                  >个人中心</el-dropdown-item
+                >
                 <el-dropdown-item command="mainpage">首页</el-dropdown-item>
-                <el-dropdown-item command="projectAddress">项目地址</el-dropdown-item>
-                <el-dropdown-item divided command="signOut">退出登录</el-dropdown-item>
+                <el-dropdown-item command="projectAddress"
+                  >项目地址</el-dropdown-item
+                >
+                <el-dropdown-item divided command="signOut"
+                  >退出登录</el-dropdown-item
+                >
               </el-dropdown-menu>
             </el-dropdown>
           </el-tooltip>

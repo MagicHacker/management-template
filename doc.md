@@ -70,6 +70,8 @@ git push origin branchname:branchname：推送本地新建的分支到远程分�
 
 git branch -d branchname：删除本地分支。
 
+git checkout -b branchName(本地分支名称) origin(远程仓库名)/branchName(远程分支名)：基于远程分支创建本地分支。
+
 ### 图标组件的使用
 
 图标已经封装并注册成全局组件，可以直接使用。将下载好的 svg 图标导入 icon/svg 中，运行时会自动将 svg 合成 svg-sprite，然后给图标组件传入 symbolID 即可。

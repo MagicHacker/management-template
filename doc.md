@@ -146,31 +146,7 @@ git push origin branchname:branchname：推送本地新建的分支到远程分�
 
 git branch -d branchname：删除本地分支。
 
-git branch -D branchName：强制删除没有 merge 的本地分支。
-
-git push origin --delete branchName(远程分支名称)：删除远程分支。
-
-git merge branchName（分支名称）：合并分支到当前分支。
-
-git tag：查看当前 tag 列表。
-
-git tag tagName（标签名称）：打一个新的 tag。
-
-git tag -a tagName（标签名称）-m '标签说明'：打一个带有 tag 说明信息的标签。
-
-git log：查看当前所有的提交信息。
-
-git reset --soft commitID(commit 提交的 hash id)：代码回滚，之前提交的代码会回滚到暂存区，工作区的代码不变。
-
-git reset --hard commitID(commit 提交的 hash id)：代码回滚，之前提交的代码和工作区的代码会被删除。
-
-git revert commitID（commit 提交的 hash id）：代码回滚，但是会创建一个新的提交，不影响之前提交的内容，之前的提交还会存在，使用 git log 还能查到。
-
-git status：查看当前仓库的情况。
-
-git stash：将当前工作区的内容暂时存储。
-
-git stash pop：将存储的内容推出。
+git checkout -b branchName(本地分支名称) origin(远程仓库名)/branchName(远程分支名)：基于远程分支创建本地分支。
 
 ### 图标组件的使用
 

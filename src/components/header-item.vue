@@ -1,36 +1,33 @@
 <template>
   <div class="header-wrap">
-    <div class="header-left">
-      <ul>
-        <li>
-          <span>管理系统模板</span>
-        </li>
-        <li @click="toggleSideBar">
-          <el-tooltip effect="dark" content="菜单栏收缩" placement="bottom">
-            <img src="../assets/svg/hamburger.svg" />
-          </el-tooltip>
-        </li>
-      </ul>
+    <div
+      class="header-left"
+      @click="toggleSideBar"
+      :style="{ left: hamburgerLeft + 'px' }"
+    >
+      <el-tooltip effect="dark" content="菜单栏收缩" placement="bottom">
+        <img src="../assets/svg/hamburger.svg" />
+      </el-tooltip>
     </div>
     <div class="header-right">
       <ul>
         <li v-popover:emailPop>
           <el-tooltip effect="dark" content="邮件" placement="bottom">
-            <el-badge :value="3">
+            <el-badge :value="dataBadge.emailBadge" :max="99">
               <img src="../assets/svg/email.svg" alt />
             </el-badge>
           </el-tooltip>
         </li>
         <li v-popover:messagePop>
           <el-tooltip effect="dark" content="信息" placement="bottom">
-            <el-badge :value="3">
+            <el-badge :value="dataBadge.messageBadge" :max="99">
               <img src="../assets/svg/bell.svg" alt />
             </el-badge>
           </el-tooltip>
         </li>
         <li v-popover:tasksPop>
           <el-tooltip effect="dark" content="任务" placement="bottom">
-            <el-badge :value="3">
+            <el-badge :value="dataBadge.taskBadge" :max="99">
               <img src="../assets/svg/tasks.svg" alt />
             </el-badge>
           </el-tooltip>
@@ -84,10 +81,12 @@
 import EmailPanel from "./email-panel";
 import MessagePanel from "./message-panel";
 import TaskPanel from "./task-panel";
+import { mapActions, mapState } from "vuex";
 export default {
   name: "HeaderItem",
   data() {
     return {
+      dataBadge: "",
       color: "#FF8C00",
       predefineColors: [
         "#ff4500",
@@ -105,17 +104,30 @@ export default {
         "hsla(209, 100%, 56%, 0.73)",
         "#c7158577"
       ],
-      sideBarOpen: false
+      isSideBarOpen: false
     };
+  },
+  mounted() {
+    this.$axios.get("/badge").then(res => {
+      this.dataBadge = res.data.data;
+    });
   },
   components: {
     EmailPanel,
     MessagePanel,
     TaskPanel
   },
+  computed: {
+    ...mapState(["sideBarOpen"]),
+    hamburgerLeft() {
+      return this.sideBarOpen ? 64 : 200;
+    }
+  },
   methods: {
+    ...mapActions(["changeSideBar"]),
     toggleSideBar() {
-      this.sideBarOpen = !this.sideBarOpen;
+      this.isSideBarOpen = !this.isSideBarOpen;
+      this.changeSideBar(this.isSideBarOpen);
     },
     handleCommand(command) {
       switch (command) {
@@ -141,6 +153,7 @@ export default {
   width: 100%;
   height: 50px;
   background-color: rgb(100, 123, 148);
+  position: relative;
   ul {
     height: 100%;
   }
@@ -149,18 +162,10 @@ export default {
     cursor: pointer;
   }
   .header-left {
-    float: left;
-    height: 100%;
-    font-size: 20px;
-    line-height: 50px;
-    text-align: center;
-    color: #fff;
-    li:nth-child(1) {
-      width: 200px;
-    }
-    li:nth-child(2) img {
-      vertical-align: middle;
-    }
+    position: absolute;
+    transition: left 0.28s;
+    top: 10px;
+    cursor: pointer;
   }
   .header-right {
     float: right;

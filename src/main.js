@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
-import store from "./store";
+import router from "./router/router";
+import store from "./store/store";
 import Axios from "axios";
 import "./icon";
 import {
@@ -28,7 +28,9 @@ import {
   Col,
   Tabs,
   TabPane,
-  Icon
+  Icon,
+  Checkbox,
+  MessageBox
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 require("echarts/lib/chart/bar");
@@ -62,13 +64,15 @@ Vue.config.productionTip = false;
   Col,
   Tabs,
   TabPane,
-  Icon
+  Icon,
+  Checkbox
 ].forEach(item => {
   Vue.use(item);
 });
 Vue.prototype.$echarts = Echarts;
 Vue.prototype.$message = Message;
 Vue.prototype.$axios = Axios;
+Vue.prototype.$confirm = MessageBox.confirm;
 new Vue({
   router,
   store,

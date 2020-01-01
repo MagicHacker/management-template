@@ -1,16 +1,12 @@
 <template>
-  <div class="mainpage-wrap">
+  <div class="mainpage-wrap" :style="{ left: left + 'px' }">
     <el-row type="flex" class="dashboard-card" justify="space-around">
       <el-col :span="5">
-        <el-card
-          class="email-item"
-          shadow="always"
-          :body-style="{ color: '#fff' }"
-        >
+        <el-card class="email-item" shadow="always" :body-style="{ color: '#fff' }">
           <el-row>
             <el-col :span="12">
               <p>邮件</p>
-              <p>23,232</p>
+              <p>{{ mainPanel.emailCount }}</p>
             </el-col>
             <el-col :span="12">
               <img src="../assets/svg/email-item.svg" alt />
@@ -19,15 +15,11 @@
         </el-card>
       </el-col>
       <el-col :span="5">
-        <el-card
-          class="visitor-item"
-          shadow="always"
-          :body-style="{ color: '#fff' }"
-        >
+        <el-card class="visitor-item" shadow="always" :body-style="{ color: '#fff' }">
           <el-row>
             <el-col :span="12">
               <p>访客</p>
-              <p>123</p>
+              <p>{{ mainPanel.visitorCount }}</p>
             </el-col>
             <el-col :span="12">
               <img src="../assets/svg/visitors.svg" alt />
@@ -36,15 +28,11 @@
         </el-card>
       </el-col>
       <el-col :span="5">
-        <el-card
-          class="message-item"
-          shadow="always"
-          :body-style="{ color: '#fff' }"
-        >
+        <el-card class="message-item" shadow="always" :body-style="{ color: '#fff' }">
           <el-row>
             <el-col :span="12">
               <p>信息</p>
-              <p>123</p>
+              <p>{{ mainPanel.messageCount }}</p>
             </el-col>
             <el-col :span="12">
               <img src="../assets/svg/message-item.svg" alt />
@@ -53,15 +41,11 @@
         </el-card>
       </el-col>
       <el-col :span="5">
-        <el-card
-          class="task-item"
-          shadow="always"
-          :body-style="{ color: '#fff' }"
-        >
+        <el-card class="task-item" shadow="always" :body-style="{ color: '#fff' }">
           <el-row>
             <el-col :span="12">
               <p>任务</p>
-              <p>123</p>
+              <p>{{ mainPanel.taskCount }}</p>
             </el-col>
             <el-col :span="12">
               <img src="../assets/svg/task-item.svg" alt />
@@ -88,12 +72,31 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   name: "MainPage",
   data() {
-    return {};
+    return {
+      mainPanel: "",
+      excepted: "",
+      actual: ""
+    };
   },
-  mounted() {
+  computed: {
+    ...mapState(["sideBarOpen"]),
+    // TODO: 待优化
+    left() {
+      return this.sideBarOpen ? 0 : 1;
+    }
+  },
+  created() {},
+  // TODO: 待优化
+  async mounted() {
+    await this.$axios.get("/main-panel").then(res => {
+      this.mainPanel = res.data.data;
+      this.excepted = res.data.excepted;
+      this.actual = res.data.actual;
+    });
     const chart = this.$echarts.init(document.querySelector(".line-chart"));
     const pieChart = this.$echarts.init(document.querySelector(".pie-chart"));
     const barChart = this.$echarts.init(document.querySelector(".bar-chart"));
@@ -131,12 +134,12 @@ export default {
         {
           name: "预计",
           type: "line",
-          data: [5, 20, 36, 10, 10, 20, 50]
+          data: this.excepted
         },
         {
           name: "实际",
           type: "line",
-          data: [3, 10, 20, 5, 5, 10, 30]
+          data: this.actual
         }
       ]
     };
@@ -168,10 +171,10 @@ export default {
             }
           },
           data: [
-            { value: 10, name: "邮件" },
-            { value: 5, name: "访客" },
-            { value: 15, name: "信息" },
-            { value: 25, name: "任务" }
+            { value: this.mainPanel.emailCount, name: "邮件" },
+            { value: this.mainPanel.visitorCount, name: "访客" },
+            { value: this.mainPanel.messageCount, name: "信息" },
+            { value: this.mainPanel.taskCount, name: "任务" }
           ]
         }
       ]
@@ -202,12 +205,12 @@ export default {
         {
           name: "预计",
           type: "bar",
-          data: [5, 20, 36, 10, 10, 20, 50]
+          data: this.excepted
         },
         {
           name: "实际",
           type: "bar",
-          data: [3, 10, 20, 5, 5, 10, 30]
+          data: this.actual
         }
       ]
     };
@@ -219,12 +222,24 @@ export default {
       pieChart.resize();
       barChart.resize();
     };
-  }
+    const mainDom = document.querySelector(".mainpage-wrap");
+    mainDom.addEventListener(
+      "transitionend",
+      function() {
+        chart.resize();
+        pieChart.resize();
+        barChart.resize();
+      },
+      false
+    );
+  },
+  methods: {}
 };
 </script>
 <style lang="scss" scoped>
 .mainpage-wrap {
   width: 100%;
+  transition: left 0.28s;
   ul li {
     display: inline-block;
   }

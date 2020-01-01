@@ -6,23 +6,50 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li class="list-item" v-for="(n, index) in 5" :key="index">
-          <img src="../assets/Belle.jpg" alt />
-          <div class="list-content">
-            <div class="list-header">
-              <span>David Belle</span>
-              <small>12:01 PM</small>
+        <li class="list-item" v-for="(item, index) in datas" :key="index">
+          <el-popover placement="bottom" width="250" trigger="click">
+            <pop-panel
+              :pop-item="{
+                name: item.name,
+                time: item.time,
+                content: item.content
+              }"
+            ></pop-panel>
+            <div slot="reference" class="list-slot">
+              <img src="../assets/Belle.jpg" alt />
+              <div class="list-content">
+                <div class="list-header">
+                  <span>{{ item.name }}</span>
+                  <small>{{ item.time }}</small>
+                </div>
+                <p>{{ item.content }}</p>
+              </div>
             </div>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-          </div>
+          </el-popover>
         </li>
       </ul>
     </div>
   </div>
 </template>
 <script>
+import PopPanel from "./pop-panel";
 export default {
   name: "EmailPanel",
+  data() {
+    return {
+      datas: [],
+      unread: 0
+    };
+  },
+  mounted() {
+    this.$axios.get("/email-panel").then(res => {
+      this.datas = res.data.datas;
+      this.unread = res.data.unread;
+    });
+  },
+  components: {
+    PopPanel
+  },
   methods: {
     checkEmail() {
       alert(1);
@@ -47,7 +74,6 @@ export default {
   width: 100%;
   margin-top: 10px;
   .list-item {
-    display: flex;
     cursor: pointer;
     padding: 5px 0px;
     img {
@@ -55,23 +81,26 @@ export default {
       height: 40px;
       border-radius: 4px;
     }
-    .list-content {
-      flex: 1;
-      min-width: 0;
-      margin-left: 10px;
-      .list-header {
-        font-size: 12px;
-        color: #000;
-        small {
-          float: right;
-          font-size: 11px;
+    .list-slot {
+      display: flex;
+      .list-content {
+        flex: 1;
+        min-width: 0;
+        margin-left: 10px;
+        .list-header {
+          font-size: 12px;
+          color: #000;
+          small {
+            float: right;
+            font-size: 11px;
+          }
         }
-      }
-      p {
-        margin: 2px 0px 0px 0px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        p {
+          margin: 2px 0px 0px 0px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
       }
     }
   }

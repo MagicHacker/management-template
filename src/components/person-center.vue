@@ -7,7 +7,14 @@
             <span>个人简介</span>
           </div>
           <div class="person-avatar">
-            <img src="../assets/Belle.jpg" alt />
+            <el-upload
+              class="avatar-uploader"
+              :show-file-list="false"
+              :on-success="handleAvatar"
+              action="https://jsonplaceholder.typicode.com/posts/"
+            >
+              <img v-if="imgUrl" :src="imgUrl" alt />
+            </el-upload>
           </div>
           <div class="person-name">
             <span>{{ name }}</span>
@@ -110,8 +117,14 @@ export default {
       twitter: "",
       facebook: "",
       phone: "",
-      instagram: ""
+      instagram: "",
+      imgUrl: require("../assets/Belle.jpg")
     };
+  },
+  methods: {
+    handleAvatar(res, file) {
+      this.imgUrl = URL.createObjectURL(file.raw);
+    }
   }
 };
 </script>
@@ -122,18 +135,31 @@ export default {
   box-sizing: border-box;
   padding: 15px;
   position: relative;
-  .person-avatar,
-  .person-name {
+  .person-avatar {
     width: 100%;
     display: flex;
     justify-content: center;
+    .avatar-uploader {
+      width: 100%;
+      /deep/ .el-upload {
+        width: 100%;
+        height: 80px;
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+      }
+    }
   }
   .person-name {
+    width: 100%;
     height: 30px;
     color: #333;
     font-weight: 700;
     font-size: 16px;
     margin-top: 10px;
+    text-align: center;
   }
   .icon-svg {
     font-size: 12px;

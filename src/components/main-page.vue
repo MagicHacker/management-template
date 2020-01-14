@@ -2,7 +2,11 @@
   <div class="mainpage-wrap" :style="{ left: left + 'px' }">
     <el-row type="flex" class="dashboard-card" justify="space-around">
       <el-col :span="5">
-        <el-card class="email-item" shadow="always" :body-style="{ color: '#fff' }">
+        <el-card
+          class="email-item"
+          shadow="always"
+          :body-style="{ color: '#fff' }"
+        >
           <el-row>
             <el-col :span="12">
               <p>邮件</p>
@@ -15,7 +19,11 @@
         </el-card>
       </el-col>
       <el-col :span="5">
-        <el-card class="visitor-item" shadow="always" :body-style="{ color: '#fff' }">
+        <el-card
+          class="visitor-item"
+          shadow="always"
+          :body-style="{ color: '#fff' }"
+        >
           <el-row>
             <el-col :span="12">
               <p>访客</p>
@@ -28,7 +36,11 @@
         </el-card>
       </el-col>
       <el-col :span="5">
-        <el-card class="message-item" shadow="always" :body-style="{ color: '#fff' }">
+        <el-card
+          class="message-item"
+          shadow="always"
+          :body-style="{ color: '#fff' }"
+        >
           <el-row>
             <el-col :span="12">
               <p>信息</p>
@@ -41,7 +53,11 @@
         </el-card>
       </el-col>
       <el-col :span="5">
-        <el-card class="task-item" shadow="always" :body-style="{ color: '#fff' }">
+        <el-card
+          class="task-item"
+          shadow="always"
+          :body-style="{ color: '#fff' }"
+        >
           <el-row>
             <el-col :span="12">
               <p>任务</p>

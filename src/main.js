@@ -32,7 +32,9 @@ import {
   Checkbox,
   MessageBox,
   Upload,
-  Loading
+  Loading,
+  Timeline,
+  TimelineItem
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 require("echarts/lib/chart/bar");
@@ -69,7 +71,9 @@ Vue.config.productionTip = false;
   Icon,
   Checkbox,
   Upload,
-  Loading
+  Loading,
+  Timeline,
+  TimelineItem
 ].forEach(item => {
   Vue.use(item);
 });

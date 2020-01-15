@@ -17,7 +17,7 @@
             </el-upload>
           </div>
           <div class="person-name">
-            <span>{{ name }}</span>
+            <span>{{ formData.name }}</span>
           </div>
           <div class="person-connect">
             <div class="connect-title">
@@ -29,19 +29,19 @@
             <ul class="connect-list">
               <li>
                 <icon-svg symbol="icon-twitter"></icon-svg>
-                <div>{{ twitter }}</div>
+                <div>{{ formData.twitter }}</div>
               </li>
               <li>
                 <icon-svg symbol="icon-facebook"></icon-svg>
-                <div>{{ facebook }}</div>
+                <div>{{ formData.facebook }}</div>
               </li>
               <li>
                 <icon-svg symbol="icon-instagram"></icon-svg>
-                <div>{{ instagram }}</div>
+                <div>{{ formData.instagram }}</div>
               </li>
               <li>
                 <icon-svg symbol="icon-phone"></icon-svg>
-                <div>{{ phone }}</div>
+                <div>{{ formData.phone }}</div>
               </li>
             </ul>
           </div>
@@ -67,9 +67,13 @@
               </div>
             </div>
             <div class="social-btn">
-              <el-button type="warning">Facebook</el-button>
-              <el-button type="primary">Twitter</el-button>
-              <el-button type="danger">Gmail</el-button>
+              <el-button type="warning" @click="goToFacebook"
+                >Facebook</el-button
+              >
+              <el-button type="primary" @click="goToTwitter">Twitter</el-button>
+              <el-button type="danger" @click="goToInstagram"
+                >Instagram</el-button
+              >
             </div>
           </div>
         </el-card>
@@ -80,25 +84,35 @@
             <el-tab-pane label="Activity">Activity</el-tab-pane>
             <el-tab-pane label="Timeline">Timeline</el-tab-pane>
             <el-tab-pane label="Account">
-              <el-form label-width="80px">
-                <el-form-item label="Name">
-                  <el-input v-model="name"></el-input>
+              <el-form
+                label-width="80px"
+                ref="accountRef"
+                :model="formData"
+                :rules="rules"
+              >
+                <el-form-item label="Name" prop="name">
+                  <el-input v-model="formData.name"></el-input>
                 </el-form-item>
-                <el-form-item label="Twitter">
-                  <el-input v-model="twitter"></el-input>
+                <el-form-item label="Twitter" prop="twitter">
+                  <el-input v-model="formData.twitter"></el-input>
                 </el-form-item>
-                <el-form-item label="FaceBook">
-                  <el-input v-model="facebook"></el-input>
+                <el-form-item label="FaceBook" prop="facebook">
+                  <el-input v-model="formData.facebook"></el-input>
                 </el-form-item>
-                <el-form-item label="Phone">
-                  <el-input v-model="phone"></el-input>
+                <el-form-item label="Phone" prop="phone">
+                  <el-input v-model="formData.phone"></el-input>
                 </el-form-item>
-                <el-form-item label="Instagram">
-                  <el-input v-model="instagram"></el-input>
+                <el-form-item label="Instagram" prop="instagram">
+                  <el-input v-model="formData.instagram"></el-input>
                 </el-form-item>
                 <el-form-item>
-                  <el-button type="primary">提交</el-button>
-                  <el-button>重置</el-button>
+                  <el-button
+                    type="primary"
+                    @click="submit('accountRef')"
+                    v-loading.fullscreen.lock="submitLoading"
+                    >提交</el-button
+                  >
+                  <el-button @click="reset('accountRef')">重置</el-button>
                 </el-form-item>
               </el-form>
             </el-tab-pane>
@@ -113,17 +127,90 @@ export default {
   name: "PersonCenter",
   data() {
     return {
-      name: "MagicHacker",
-      twitter: "",
-      facebook: "",
-      phone: "",
-      instagram: "",
-      imgUrl: require("../assets/Belle.jpg")
+      formData: {
+        name: "MagicHacker",
+        twitter: "",
+        facebook: "",
+        phone: "",
+        instagram: ""
+      },
+      imgUrl: require("../assets/Belle.jpg"),
+      submitLoading: false,
+      rules: {
+        name: [
+          {
+            required: true,
+            message: "输入不能为空",
+            trigger: ["blur", "change"]
+          }
+        ],
+        twitter: [
+          {
+            required: true,
+            message: "输入不能为空",
+            trigger: ["blur", "change"]
+          }
+        ],
+        facebook: [
+          {
+            required: true,
+            message: "输入不能为空",
+            trigger: ["blur", "change"]
+          }
+        ],
+        phone: [
+          {
+            required: true,
+            message: "输入不能为空",
+            trigger: ["blur", "change"]
+          }
+        ],
+        instagram: [
+          {
+            required: true,
+            message: "输入不能为空",
+            trigger: ["blur", "change"]
+          }
+        ]
+      }
     };
   },
   methods: {
     handleAvatar(res, file) {
       this.imgUrl = URL.createObjectURL(file.raw);
+    },
+    // 访问Facebook
+    goToFacebook() {
+      window.open(`https://${this.facebook}`);
+    },
+    // 访问Twitter
+    goToTwitter() {
+      window.open(`https://${this.twitter}`);
+    },
+    // 访问Instagram
+    goToInstagram() {
+      window.open(`https://${this.instagram}`);
+    },
+    // 提交
+    submit(refName) {
+      this.$refs[refName].validate(valid => {
+        if (valid) {
+          this.submitLoading = true;
+          setTimeout(() => {
+            this.submitLoading = false;
+            this.$message({
+              type: "success",
+              message: "提交成功"
+            });
+          }, 1500);
+        } else {
+          return false;
+        }
+      });
+    },
+    // 重置
+    reset(refName) {
+      this.$refs[refName].resetFields();
     }
   }
 };
@@ -143,7 +230,7 @@ export default {
       width: 100%;
       /deep/ .el-upload {
         width: 100%;
-        height: 80px;
+        height: 64px;
         img {
           width: 60px;
           height: 60px;

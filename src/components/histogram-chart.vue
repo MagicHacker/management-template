@@ -1,5 +1,5 @@
 <template>
-  <div class="mainpage-wrap" :style="{ left: left + 'px' }">
+  <div class="mainpage-wrap">
     <el-card class="line-card" shadow="always">
       <div class="line-chart"></div>
     </el-card>

@@ -82,7 +82,22 @@
         <el-card>
           <el-tabs>
             <el-tab-pane label="Activity">Activity</el-tab-pane>
-            <el-tab-pane label="Timeline">Timeline</el-tab-pane>
+            <el-tab-pane label="Timeline" class="person-center-timeline">
+              <el-timeline>
+                <el-timeline-item
+                  v-for="(item, index) in timeline"
+                  :key="index"
+                  placement="top"
+                  :type="item.type"
+                  :timestamp="item.timestamp"
+                >
+                  <el-card>
+                    <h5>{{ item.title }}</h5>
+                    <div>{{ item.content }}</div>
+                  </el-card>
+                </el-timeline-item>
+              </el-timeline>
+            </el-tab-pane>
             <el-tab-pane label="Account">
               <el-form
                 label-width="80px"
@@ -134,6 +149,26 @@ export default {
         phone: "",
         instagram: ""
       },
+      timeline: [
+        {
+          timestamp: "2019/4/12",
+          title: "提交GitHub",
+          content: "zx提交于2019/4/12",
+          type: "primary"
+        },
+        {
+          timestamp: "2019/4/8",
+          title: "提交GItHub",
+          content: "zx提交于2019/4/8",
+          type: "primary"
+        },
+        {
+          timestamp: "2019/4/3",
+          title: "提交GitHub",
+          content: "zx提交于2019/4/3",
+          type: "primary"
+        }
+      ],
       imgUrl: require("../assets/Belle.jpg"),
       submitLoading: false,
       rules: {
@@ -297,6 +332,9 @@ export default {
     height: 100%;
     padding: 15px;
     margin-left: 20px;
+  }
+  .person-center-timeline {
+    padding-left: 5px;
   }
 }
 </style>

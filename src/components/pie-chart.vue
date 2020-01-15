@@ -1,5 +1,5 @@
 <template>
-  <div class="peimain" :style="{ left: left + 'px' }">
+  <div class="peimain">
     <el-card class="piechart" shadow="always">
       <div class="chart"></div>
     </el-card>

@@ -34,7 +34,9 @@ import {
   Upload,
   Loading,
   Timeline,
-  TimelineItem
+  TimelineItem,
+  Table,
+  TableColumn
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 require("echarts/lib/chart/bar");
@@ -73,7 +75,9 @@ Vue.config.productionTip = false;
   Upload,
   Loading,
   Timeline,
-  TimelineItem
+  TimelineItem,
+  Table,
+  TableColumn
 ].forEach(item => {
   Vue.use(item);
 });

@@ -81,7 +81,9 @@
       <el-col :span="16">
         <el-card>
           <el-tabs>
-            <el-tab-pane label="Activity">Activity</el-tab-pane>
+            <el-tab-pane label="Calendar">
+              <el-calendar v-model="date"></el-calendar>
+            </el-tab-pane>
             <el-tab-pane label="Timeline" class="person-center-timeline">
               <el-timeline>
                 <el-timeline-item
@@ -149,6 +151,7 @@ export default {
         phone: "",
         instagram: ""
       },
+      date: new Date(),
       timeline: [
         {
           timestamp: "2019/4/12",

@@ -3,9 +3,9 @@
     <el-row :gutter="20">
       <el-col :span="8">
         <el-card>
-          <div slot="header">
+          <template v-slot:header>
             <span>个人简介</span>
-          </div>
+          </template>
           <div class="person-avatar">
             <el-upload
               class="avatar-uploader"
@@ -67,13 +67,9 @@
               </div>
             </div>
             <div class="social-btn">
-              <el-button type="warning" @click="goToFacebook"
-                >Facebook</el-button
-              >
+              <el-button type="warning" @click="goToFacebook">Facebook</el-button>
               <el-button type="primary" @click="goToTwitter">Twitter</el-button>
-              <el-button type="danger" @click="goToInstagram"
-                >Instagram</el-button
-              >
+              <el-button type="danger" @click="goToInstagram">Instagram</el-button>
             </div>
           </div>
         </el-card>
@@ -101,12 +97,7 @@
               </el-timeline>
             </el-tab-pane>
             <el-tab-pane label="Account">
-              <el-form
-                label-width="80px"
-                ref="accountRef"
-                :model="formData"
-                :rules="rules"
-              >
+              <el-form label-width="80px" ref="accountRef" :model="formData" :rules="rules">
                 <el-form-item label="Name" prop="name">
                   <el-input v-model="formData.name"></el-input>
                 </el-form-item>
@@ -127,8 +118,7 @@
                     type="primary"
                     @click="submit('accountRef')"
                     v-loading.fullscreen.lock="submitLoading"
-                    >提交</el-button
-                  >
+                  >提交</el-button>
                   <el-button @click="reset('accountRef')">重置</el-button>
                 </el-form-item>
               </el-form>

@@ -15,16 +15,18 @@
                 content: item.content
               }"
             ></pop-panel>
-            <div slot="reference" class="list-slot">
-              <img src="../assets/Belle.jpg" alt />
-              <div class="list-content">
-                <div class="list-header">
-                  <span>{{ item.name }}</span>
-                  <small>{{ item.time }}</small>
+            <template v-slot:reference>
+              <div class="list-slot">
+                <img src="../assets/Belle.jpg" alt />
+                <div class="list-content">
+                  <div class="list-header">
+                    <span>{{ item.name }}</span>
+                    <small>{{ item.time }}</small>
+                  </div>
+                  <p>{{ item.content }}</p>
                 </div>
-                <p>{{ item.content }}</p>
               </div>
-            </div>
+            </template>
           </el-popover>
         </li>
       </ul>

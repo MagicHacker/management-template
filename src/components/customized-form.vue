@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "CustomizedForm"
+  name: "CustomizedForm",
 };
 </script>
 <style lang="scss"></style>

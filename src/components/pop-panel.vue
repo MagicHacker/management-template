@@ -16,14 +16,14 @@ export default {
     return {
       name: "名字",
       time: "时间",
-      content: "xx"
+      content: "xx",
     };
   },
   props: {
     popItem: {
-      type: Object
-    }
-  }
+      type: Object,
+    },
+  },
 };
 </script>
 <style lang="scss">

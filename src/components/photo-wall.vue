@@ -35,10 +35,10 @@ export default {
         require("../assets/images/sky.jpg"),
         require("../assets/images/snow.jpg"),
         require("../assets/images/swing.jpg"),
-        require("../assets/images/lake.jpg")
-      ]
+        require("../assets/images/lake.jpg"),
+      ],
     };
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>

@@ -15,13 +15,13 @@ export default {
   name: "IconPage",
   data() {
     return {
-      activeItem: "customized"
+      activeItem: "customized",
     };
   },
   components: {
     ElementIcon,
-    CustomizedIcon
-  }
+    CustomizedIcon,
+  },
 };
 </script>
 <style lang="scss">

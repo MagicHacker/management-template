@@ -37,7 +37,7 @@ import {
   TimelineItem,
   Table,
   TableColumn,
-  Calendar
+  Calendar,
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 require("echarts/lib/chart/bar");
@@ -79,8 +79,8 @@ Vue.config.productionTip = false;
   TimelineItem,
   Table,
   TableColumn,
-  Calendar
-].forEach(item => {
+  Calendar,
+].forEach((item) => {
   Vue.use(item);
 });
 Vue.prototype.$echarts = Echarts;
@@ -90,5 +90,5 @@ Vue.prototype.$confirm = MessageBox.confirm;
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");

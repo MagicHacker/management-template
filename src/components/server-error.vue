@@ -12,7 +12,7 @@ export default {
   data() {
     return {};
   },
-  computed: {}
+  computed: {},
 };
 </script>
 <style lang="scss" scoped>

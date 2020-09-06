@@ -7,7 +7,7 @@
         class="body-wrap"
         :style="{
           width: `calc(100% - ${bodyLeft}px)`,
-          left: bodyLeft + 'px'
+          left: bodyLeft + 'px',
         }"
       >
         <router-view />
@@ -28,12 +28,12 @@ export default {
     ...mapState(["sideBarOpen"]),
     bodyLeft() {
       return this.sideBarOpen ? 64 : 200;
-    }
+    },
   },
   components: {
     HeaderItem,
-    SidebarItem
-  }
+    SidebarItem,
+  },
 };
 </script>
 <style lang="scss">

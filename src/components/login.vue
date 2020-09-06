@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       username: "admin",
-      password: "admin"
+      password: "admin",
     };
   },
   methods: {
@@ -41,13 +41,13 @@ export default {
         this.$message({
           message: "用户名或密码不正确",
           type: "error",
-          duration: 1000
+          duration: 1000,
         });
       } else {
         this.$message({
           message: "登录成功",
           type: "success",
-          duration: 1000
+          duration: 1000,
         });
         // 登录跳转
         this.$router.push({ path: "mainPage" });
@@ -56,10 +56,10 @@ export default {
     signUp() {
       this.$message({
         message: "开发中，敬请期待",
-        duration: 1000
+        duration: 1000,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">

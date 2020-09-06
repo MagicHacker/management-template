@@ -15,7 +15,7 @@
 </template>
 <script>
 export default {
-  name: "ClientError"
+  name: "ClientError",
 };
 </script>
 <style lang="scss" scoped>

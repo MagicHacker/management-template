@@ -95,7 +95,7 @@ export default {
     return {
       mainPanel: "",
       excepted: "",
-      actual: ""
+      actual: "",
     };
   },
   computed: {
@@ -103,12 +103,12 @@ export default {
     // TODO: 待优化
     left() {
       return this.sideBarOpen ? 0 : 1;
-    }
+    },
   },
   created() {},
   // TODO: 待优化
   async mounted() {
-    await this.$axios.get("/main-panel").then(res => {
+    await this.$axios.get("/main-panel").then((res) => {
       this.mainPanel = res.data.data;
       this.excepted = res.data.excepted;
       this.actual = res.data.actual;
@@ -119,14 +119,14 @@ export default {
     const options = {
       legend: {
         type: "plain",
-        data: ["预计", "实际"]
+        data: ["预计", "实际"],
       },
       tooltip: {},
       grid: {
         left: "3%",
         right: "3%",
         top: "30px",
-        bottom: "20px"
+        bottom: "20px",
       },
       xAxis: {
         type: "category",
@@ -137,31 +137,31 @@ export default {
           "星期四",
           "星期五",
           "星期六",
-          "星期日"
-        ]
+          "星期日",
+        ],
       },
       yAxis: [
         {
           type: "value",
-          name: "访客数"
-        }
+          name: "访客数",
+        },
       ],
       series: [
         {
           name: "预计",
           type: "line",
-          data: this.excepted
+          data: this.excepted,
         },
         {
           name: "实际",
           type: "line",
-          data: this.actual
-        }
-      ]
+          data: this.actual,
+        },
+      ],
     };
     const pieOptions = {
       legend: {
-        data: ["邮件", "访客", "信息", "任务"]
+        data: ["邮件", "访客", "信息", "任务"],
       },
       calculable: true,
       series: [
@@ -172,32 +172,32 @@ export default {
           roseType: "radius",
           label: {
             normal: {
-              show: false
+              show: false,
             },
             emphasis: {
-              show: true
-            }
+              show: true,
+            },
           },
           lableLine: {
             normal: {
-              show: false
+              show: false,
             },
             emphasis: {
-              show: true
-            }
+              show: true,
+            },
           },
           data: [
             { value: this.mainPanel.emailCount, name: "邮件" },
             { value: this.mainPanel.visitorCount, name: "访客" },
             { value: this.mainPanel.messageCount, name: "信息" },
-            { value: this.mainPanel.taskCount, name: "任务" }
-          ]
-        }
-      ]
+            { value: this.mainPanel.taskCount, name: "任务" },
+          ],
+        },
+      ],
     };
     const barOptions = {
       legend: {
-        data: ["预计", "实际"]
+        data: ["预计", "实际"],
       },
       xAxis: {
         type: "category",
@@ -208,27 +208,27 @@ export default {
           "星期四",
           "星期五",
           "星期六",
-          "星期日"
-        ]
+          "星期日",
+        ],
       },
       yAxis: [
         {
           type: "value",
-          name: "访客数"
-        }
+          name: "访客数",
+        },
       ],
       series: [
         {
           name: "预计",
           type: "bar",
-          data: this.excepted
+          data: this.excepted,
         },
         {
           name: "实际",
           type: "bar",
-          data: this.actual
-        }
-      ]
+          data: this.actual,
+        },
+      ],
     };
     pieChart.setOption(pieOptions);
     chart.setOption(options);
@@ -241,7 +241,7 @@ export default {
     const mainDom = document.querySelector(".mainpage-wrap");
     mainDom.addEventListener(
       "transitionend",
-      function() {
+      function () {
         chart.resize();
         pieChart.resize();
         barChart.resize();
@@ -249,7 +249,7 @@ export default {
       false
     );
   },
-  methods: {}
+  methods: {},
 };
 </script>
 <style lang="scss" scoped>

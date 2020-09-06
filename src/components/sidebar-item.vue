@@ -139,8 +139,8 @@ export default {
     },
     routePath() {
       return this.$route.path;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">

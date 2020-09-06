@@ -67,9 +67,13 @@
               </div>
             </div>
             <div class="social-btn">
-              <el-button type="warning" @click="goToFacebook">Facebook</el-button>
+              <el-button type="warning" @click="goToFacebook"
+                >Facebook</el-button
+              >
               <el-button type="primary" @click="goToTwitter">Twitter</el-button>
-              <el-button type="danger" @click="goToInstagram">Instagram</el-button>
+              <el-button type="danger" @click="goToInstagram"
+                >Instagram</el-button
+              >
             </div>
           </div>
         </el-card>
@@ -97,7 +101,12 @@
               </el-timeline>
             </el-tab-pane>
             <el-tab-pane label="Account">
-              <el-form label-width="80px" ref="accountRef" :model="formData" :rules="rules">
+              <el-form
+                label-width="80px"
+                ref="accountRef"
+                :model="formData"
+                :rules="rules"
+              >
                 <el-form-item label="Name" prop="name">
                   <el-input v-model="formData.name"></el-input>
                 </el-form-item>
@@ -118,7 +127,8 @@
                     type="primary"
                     @click="submit('accountRef')"
                     v-loading.fullscreen.lock="submitLoading"
-                  >提交</el-button>
+                    >提交</el-button
+                  >
                   <el-button @click="reset('accountRef')">重置</el-button>
                 </el-form-item>
               </el-form>
@@ -139,7 +149,7 @@ export default {
         twitter: "",
         facebook: "",
         phone: "",
-        instagram: ""
+        instagram: "",
       },
       date: new Date(),
       timeline: [
@@ -147,20 +157,20 @@ export default {
           timestamp: "2019/4/12",
           title: "提交GitHub",
           content: "zx提交于2019/4/12",
-          type: "primary"
+          type: "primary",
         },
         {
           timestamp: "2019/4/8",
           title: "提交GItHub",
           content: "zx提交于2019/4/8",
-          type: "primary"
+          type: "primary",
         },
         {
           timestamp: "2019/4/3",
           title: "提交GitHub",
           content: "zx提交于2019/4/3",
-          type: "primary"
-        }
+          type: "primary",
+        },
       ],
       imgUrl: require("../assets/Belle.jpg"),
       submitLoading: false,
@@ -169,38 +179,38 @@ export default {
           {
             required: true,
             message: "输入不能为空",
-            trigger: ["blur", "change"]
-          }
+            trigger: ["blur", "change"],
+          },
         ],
         twitter: [
           {
             required: true,
             message: "输入不能为空",
-            trigger: ["blur", "change"]
-          }
+            trigger: ["blur", "change"],
+          },
         ],
         facebook: [
           {
             required: true,
             message: "输入不能为空",
-            trigger: ["blur", "change"]
-          }
+            trigger: ["blur", "change"],
+          },
         ],
         phone: [
           {
             required: true,
             message: "输入不能为空",
-            trigger: ["blur", "change"]
-          }
+            trigger: ["blur", "change"],
+          },
         ],
         instagram: [
           {
             required: true,
             message: "输入不能为空",
-            trigger: ["blur", "change"]
-          }
-        ]
-      }
+            trigger: ["blur", "change"],
+          },
+        ],
+      },
     };
   },
   methods: {
@@ -221,14 +231,14 @@ export default {
     },
     // 提交
     submit(refName) {
-      this.$refs[refName].validate(valid => {
+      this.$refs[refName].validate((valid) => {
         if (valid) {
           this.submitLoading = true;
           setTimeout(() => {
             this.submitLoading = false;
             this.$message({
               type: "success",
-              message: "提交成功"
+              message: "提交成功",
             });
           }, 1500);
         } else {
@@ -239,8 +249,8 @@ export default {
     // 重置
     reset(refName) {
       this.$refs[refName].resetFields();
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

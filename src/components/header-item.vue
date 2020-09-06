@@ -102,26 +102,26 @@ export default {
         "hsva(120, 40, 94, 0.5)",
         "hsl(181, 100%, 37%)",
         "hsla(209, 100%, 56%, 0.73)",
-        "#c7158577"
+        "#c7158577",
       ],
-      isSideBarOpen: false
+      isSideBarOpen: false,
     };
   },
   mounted() {
-    this.$axios.get("/badge").then(res => {
+    this.$axios.get("/badge").then((res) => {
       this.dataBadge = res.data.data;
     });
   },
   components: {
     EmailPanel,
     MessagePanel,
-    TaskPanel
+    TaskPanel,
   },
   computed: {
     ...mapState(["sideBarOpen"]),
     hamburgerLeft() {
       return this.sideBarOpen ? 64 : 200;
-    }
+    },
   },
   methods: {
     ...mapActions(["changeSideBar"]),
@@ -144,8 +144,8 @@ export default {
           this.$router.push({ path: "login" });
           break;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">

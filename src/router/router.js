@@ -29,7 +29,7 @@ export default new Router({
     {
       path: "/login",
       name: "login",
-      component: Login
+      component: Login,
     },
     {
       path: "/homepage",
@@ -38,82 +38,82 @@ export default new Router({
       children: [
         {
           path: "/mainPage",
-          component: MainPage
+          component: MainPage,
         },
         {
           path: "/iconPage",
-          component: IconPage
+          component: IconPage,
         },
         {
           path: "/histogramChart",
-          component: HistogramChart
+          component: HistogramChart,
         },
         {
           path: "/lineChart",
-          component: LineChart
+          component: LineChart,
         },
         {
           path: "/pieChart",
-          component: PieChart
+          component: PieChart,
         },
         {
           path: "/normalTable",
-          component: NormalTable
+          component: NormalTable,
         },
         {
           path: "/editableTable",
-          component: EditableTable
+          component: EditableTable,
         },
         {
           path: "/customizedTable",
-          component: CustomizedTable
+          component: CustomizedTable,
         },
         {
           path: "/normalForm",
-          component: NormalForm
+          component: NormalForm,
         },
         {
           path: "/customizedForm",
-          component: CustomizedForm
+          component: CustomizedForm,
         },
         {
           path: "/componentsList",
-          component: ComponentsList
+          component: ComponentsList,
         },
         {
           path: "/markdown",
-          component: MarkdownItem
+          component: MarkdownItem,
         },
         {
           path: "/richTextEditor",
-          component: RichTextEditor
+          component: RichTextEditor,
         },
         {
           path: "/clientError",
-          component: ClientError
+          component: ClientError,
         },
         {
           path: "/serverError",
-          component: ServerError
+          component: ServerError,
         },
         {
           path: "/todoLists",
-          component: TodoLists
+          component: TodoLists,
         },
         {
           path: "/photoWall",
-          component: PhotoWall
+          component: PhotoWall,
         },
         {
           path: "/personCenter",
-          component: PersonCenter
-        }
-      ]
+          component: PersonCenter,
+        },
+      ],
     },
     {
       path: "",
       name: "",
-      component: Login
-    }
-  ]
+      component: Login,
+    },
+  ],
 });

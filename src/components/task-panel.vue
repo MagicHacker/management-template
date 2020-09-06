@@ -19,14 +19,14 @@ export default {
   name: "TaskPanel",
   data() {
     return {
-      datas: []
+      datas: [],
     };
   },
   mounted() {
-    this.$axios.get("/task-panel").then(res => {
+    this.$axios.get("/task-panel").then((res) => {
       this.datas = res.data.datas;
     });
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>

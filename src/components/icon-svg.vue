@@ -10,8 +10,8 @@ export default {
   computed: {
     iconName() {
       return `#${this.symbol}`;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss"></style>

@@ -18,23 +18,23 @@ export default {
     const option = {
       xAxis: {
         type: "category",
-        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
       },
       yAxis: {
-        type: "value"
+        type: "value",
       },
       series: [
         {
           data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: "line"
-        }
-      ]
+          type: "line",
+        },
+      ],
     };
     linechart.setOption(option);
     window.onresize = () => {
       linechart.resize();
     };
-  }
+  },
 };
 </script>
 <style lang="scss">

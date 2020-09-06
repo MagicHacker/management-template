@@ -15,8 +15,8 @@ module.exports = {
         "chore",
         "library",
         "build",
-        "image"
-      ]
-    ]
-  }
+        "image",
+      ],
+    ],
+  },
 };

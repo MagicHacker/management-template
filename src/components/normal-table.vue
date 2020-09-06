@@ -27,43 +27,43 @@ export default {
         {
           name: "Johnson",
           age: 28,
-          salary: 50000
+          salary: 50000,
         },
         {
           name: "Joe",
           age: 28,
-          salary: 30000
+          salary: 30000,
         },
         {
           name: "Yang",
           age: 26,
-          salary: 15000
-        }
+          salary: 15000,
+        },
       ],
       fixedTable: [
         {
           date: "1991-07-08",
           name: "张轩",
-          address: "廊坊"
+          address: "廊坊",
         },
         {
           date: "1991-10-21",
           name: "乔予思",
-          address: "廊坊"
+          address: "廊坊",
         },
         {
           date: "1993-12-27",
           name: "张洋",
-          address: "保定"
+          address: "保定",
         },
         {
           date: "1991-05-22",
           name: "薛姝琦",
-          address: "廊坊"
-        }
-      ]
+          address: "廊坊",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 <style lang="scss">

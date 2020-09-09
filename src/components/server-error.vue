@@ -8,12 +8,12 @@
 </template>
 <script>
 export default {
-  name: "ServerError",
+  name: 'ServerError',
   data() {
-    return {};
+    return {}
   },
-  computed: {},
-};
+  computed: {}
+}
 </script>
 <style lang="scss" scoped>
 .server-error-wrap {

@@ -1,9 +1,9 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router/router";
-import store from "./store/store";
-import Axios from "axios";
-import "./icon";
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router/router'
+import store from './store/store'
+import Axios from 'axios'
+import './icon'
 import {
   Form,
   FormItem,
@@ -37,18 +37,18 @@ import {
   TimelineItem,
   Table,
   TableColumn,
-  Calendar,
-} from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
-require("echarts/lib/chart/bar");
-require("echarts/lib/chart/line");
-require("echarts/lib/component/tooltip");
-require("echarts/lib/component/title");
-require("echarts/lib/component/legend");
-require("echarts/lib/chart/pie");
-const Echarts = require("echarts/lib/echarts");
-Vue.config.productionTip = false;
-[
+  Calendar
+} from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+require('echarts/lib/chart/bar')
+require('echarts/lib/chart/line')
+require('echarts/lib/component/tooltip')
+require('echarts/lib/component/title')
+require('echarts/lib/component/legend')
+require('echarts/lib/chart/pie')
+const Echarts = require('echarts/lib/echarts')
+Vue.config.productionTip = false
+;[
   Form,
   FormItem,
   Input,
@@ -79,16 +79,16 @@ Vue.config.productionTip = false;
   TimelineItem,
   Table,
   TableColumn,
-  Calendar,
+  Calendar
 ].forEach((item) => {
-  Vue.use(item);
-});
-Vue.prototype.$echarts = Echarts;
-Vue.prototype.$message = Message;
-Vue.prototype.$axios = Axios;
-Vue.prototype.$confirm = MessageBox.confirm;
+  Vue.use(item)
+})
+Vue.prototype.$echarts = Echarts
+Vue.prototype.$message = Message
+Vue.prototype.$axios = Axios
+Vue.prototype.$confirm = MessageBox.confirm
 new Vue({
   router,
   store,
-  render: (h) => h(App),
-}).$mount("#app");
+  render: (h) => h(App)
+}).$mount('#app')

@@ -15,8 +15,8 @@
 </template>
 <script>
 export default {
-  name: "ClientError",
-};
+  name: 'ClientError'
+}
 </script>
 <style lang="scss" scoped>
 .client-error-wrap {
@@ -36,7 +36,7 @@ export default {
     margin-right: 30px;
     animation: ghost-float 3s alternate infinite ease-in-out;
     &:after {
-      content: "";
+      content: '';
       width: 100%;
       display: block;
       height: 15px;

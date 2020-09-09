@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "richTextEditor",
-};
+  name: 'richTextEditor'
+}
 </script>
 <style lang="scss" scoped></style>

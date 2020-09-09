@@ -5,13 +5,13 @@
 </template>
 <script>
 export default {
-  name: "IconSvg",
-  props: ["symbol"],
+  name: 'IconSvg',
+  props: ['symbol'],
   computed: {
     iconName() {
-      return `#${this.symbol}`;
-    },
-  },
-};
+      return `#${this.symbol}`
+    }
+  }
+}
 </script>
 <style lang="scss"></style>

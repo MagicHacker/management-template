@@ -28,46 +28,46 @@
 </template>
 <script>
 export default {
-  name: "login",
+  name: 'login',
   data() {
     return {
-      username: "admin",
-      password: "admin",
-    };
+      username: 'admin',
+      password: 'admin'
+    }
   },
   methods: {
     signIn() {
-      if (this.username !== "admin" || this.password !== "admin") {
+      if (this.username !== 'admin' || this.password !== 'admin') {
         this.$message({
-          message: "用户名或密码不正确",
-          type: "error",
-          duration: 1000,
-        });
+          message: '用户名或密码不正确',
+          type: 'error',
+          duration: 1000
+        })
       } else {
         this.$message({
-          message: "登录成功",
-          type: "success",
-          duration: 1000,
-        });
+          message: '登录成功',
+          type: 'success',
+          duration: 1000
+        })
         // 登录跳转
-        this.$router.push({ path: "mainPage" });
+        this.$router.push({ path: 'mainPage' })
       }
     },
     signUp() {
       this.$message({
-        message: "开发中，敬请期待",
-        duration: 1000,
-      });
-    },
-  },
-};
+        message: '开发中，敬请期待',
+        duration: 1000
+      })
+    }
+  }
+}
 </script>
 <style lang="scss">
 .login-container {
   width: 100%;
   height: 100%;
   position: relative;
-  background-image: url("../assets/login-bg.png");
+  background-image: url('../assets/login-bg.png');
   background-size: 100%;
   .login-wrap {
     position: absolute;
@@ -80,7 +80,7 @@ export default {
   .login-left {
     width: 50%;
     height: 100%;
-    background-image: url("../assets/login-left.png");
+    background-image: url('../assets/login-left.png');
     background-repeat: no-repeat;
     float: left;
   }

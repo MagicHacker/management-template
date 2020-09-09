@@ -242,8 +242,8 @@
 </template>
 <script>
 export default {
-  name: "ElementIcon",
-};
+  name: 'ElementIcon'
+}
 </script>
 <style lang="scss">
 .element-wrap {

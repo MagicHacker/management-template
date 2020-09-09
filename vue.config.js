@@ -1,26 +1,26 @@
-const path = require("path");
-const resolve = (dir) => path.join(__dirname, dir);
+const path = require('path')
+const resolve = (dir) => path.join(__dirname, dir)
 module.exports = {
   devServer: {
-    before: require("./mock"),
+    before: require('./mock')
   },
   chainWebpack: (config) => {
-    config.module.rule("svg").exclude.add(resolve("./src/icon")).end();
+    config.module.rule('svg').exclude.add(resolve('./src/icon')).end()
     config.module
-      .rule("icon")
+      .rule('icon')
       .test(/\.svg$/)
-      .include.add(resolve("./src/icon"))
+      .include.add(resolve('./src/icon'))
       .end()
-      .use("svg-sprite-loader")
-      .loader("svg-sprite-loader")
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
       .options({
-        symbolId: "icon-[name]",
+        symbolId: 'icon-[name]'
       })
       .end()
-      .use("svgo-loader")
-      .loader("svgo-loader")
+      .use('svgo-loader')
+      .loader('svgo-loader')
       .options({
-        externalConfig: "svgo-config.yml",
-      });
-  },
-};
+        externalConfig: 'svgo-config.yml'
+      })
+  }
+}

@@ -466,8 +466,8 @@
 </template>
 <script>
 export default {
-  name: "CustomizedIcon",
-};
+  name: 'CustomizedIcon'
+}
 </script>
 <style lang="scss">
 .customized-wrap {

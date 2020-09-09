@@ -88,169 +88,169 @@
   </div>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 export default {
-  name: "MainPage",
+  name: 'MainPage',
   data() {
     return {
-      mainPanel: "",
-      excepted: "",
-      actual: "",
-    };
+      mainPanel: '',
+      excepted: '',
+      actual: ''
+    }
   },
   computed: {
-    ...mapState(["sideBarOpen"]),
+    ...mapState(['sideBarOpen']),
     // TODO: 待优化
     left() {
-      return this.sideBarOpen ? 0 : 1;
-    },
+      return this.sideBarOpen ? 0 : 1
+    }
   },
   created() {},
   // TODO: 待优化
   async mounted() {
-    await this.$axios.get("/main-panel").then((res) => {
-      this.mainPanel = res.data.data;
-      this.excepted = res.data.excepted;
-      this.actual = res.data.actual;
-    });
-    const chart = this.$echarts.init(document.querySelector(".line-chart"));
-    const pieChart = this.$echarts.init(document.querySelector(".pie-chart"));
-    const barChart = this.$echarts.init(document.querySelector(".bar-chart"));
+    await this.$axios.get('/main-panel').then((res) => {
+      this.mainPanel = res.data.data
+      this.excepted = res.data.excepted
+      this.actual = res.data.actual
+    })
+    const chart = this.$echarts.init(document.querySelector('.line-chart'))
+    const pieChart = this.$echarts.init(document.querySelector('.pie-chart'))
+    const barChart = this.$echarts.init(document.querySelector('.bar-chart'))
     const options = {
       legend: {
-        type: "plain",
-        data: ["预计", "实际"],
+        type: 'plain',
+        data: ['预计', '实际']
       },
       tooltip: {},
       grid: {
-        left: "3%",
-        right: "3%",
-        top: "30px",
-        bottom: "20px",
+        left: '3%',
+        right: '3%',
+        top: '30px',
+        bottom: '20px'
       },
       xAxis: {
-        type: "category",
+        type: 'category',
         data: [
-          "星期一",
-          "星期二",
-          "星期三",
-          "星期四",
-          "星期五",
-          "星期六",
-          "星期日",
-        ],
+          '星期一',
+          '星期二',
+          '星期三',
+          '星期四',
+          '星期五',
+          '星期六',
+          '星期日'
+        ]
       },
       yAxis: [
         {
-          type: "value",
-          name: "访客数",
-        },
+          type: 'value',
+          name: '访客数'
+        }
       ],
       series: [
         {
-          name: "预计",
-          type: "line",
-          data: this.excepted,
+          name: '预计',
+          type: 'line',
+          data: this.excepted
         },
         {
-          name: "实际",
-          type: "line",
-          data: this.actual,
-        },
-      ],
-    };
+          name: '实际',
+          type: 'line',
+          data: this.actual
+        }
+      ]
+    }
     const pieOptions = {
       legend: {
-        data: ["邮件", "访客", "信息", "任务"],
+        data: ['邮件', '访客', '信息', '任务']
       },
       calculable: true,
       series: [
         {
-          type: "pie",
+          type: 'pie',
           radius: [20, 110],
-          center: ["50%", "50%"],
-          roseType: "radius",
+          center: ['50%', '50%'],
+          roseType: 'radius',
           label: {
             normal: {
-              show: false,
+              show: false
             },
             emphasis: {
-              show: true,
-            },
+              show: true
+            }
           },
           lableLine: {
             normal: {
-              show: false,
+              show: false
             },
             emphasis: {
-              show: true,
-            },
+              show: true
+            }
           },
           data: [
-            { value: this.mainPanel.emailCount, name: "邮件" },
-            { value: this.mainPanel.visitorCount, name: "访客" },
-            { value: this.mainPanel.messageCount, name: "信息" },
-            { value: this.mainPanel.taskCount, name: "任务" },
-          ],
-        },
-      ],
-    };
+            { value: this.mainPanel.emailCount, name: '邮件' },
+            { value: this.mainPanel.visitorCount, name: '访客' },
+            { value: this.mainPanel.messageCount, name: '信息' },
+            { value: this.mainPanel.taskCount, name: '任务' }
+          ]
+        }
+      ]
+    }
     const barOptions = {
       legend: {
-        data: ["预计", "实际"],
+        data: ['预计', '实际']
       },
       xAxis: {
-        type: "category",
+        type: 'category',
         data: [
-          "星期一",
-          "星期二",
-          "星期三",
-          "星期四",
-          "星期五",
-          "星期六",
-          "星期日",
-        ],
+          '星期一',
+          '星期二',
+          '星期三',
+          '星期四',
+          '星期五',
+          '星期六',
+          '星期日'
+        ]
       },
       yAxis: [
         {
-          type: "value",
-          name: "访客数",
-        },
+          type: 'value',
+          name: '访客数'
+        }
       ],
       series: [
         {
-          name: "预计",
-          type: "bar",
-          data: this.excepted,
+          name: '预计',
+          type: 'bar',
+          data: this.excepted
         },
         {
-          name: "实际",
-          type: "bar",
-          data: this.actual,
-        },
-      ],
-    };
-    pieChart.setOption(pieOptions);
-    chart.setOption(options);
-    barChart.setOption(barOptions);
+          name: '实际',
+          type: 'bar',
+          data: this.actual
+        }
+      ]
+    }
+    pieChart.setOption(pieOptions)
+    chart.setOption(options)
+    barChart.setOption(barOptions)
     window.onresize = () => {
-      chart.resize();
-      pieChart.resize();
-      barChart.resize();
-    };
-    const mainDom = document.querySelector(".mainpage-wrap");
+      chart.resize()
+      pieChart.resize()
+      barChart.resize()
+    }
+    const mainDom = document.querySelector('.mainpage-wrap')
     mainDom.addEventListener(
-      "transitionend",
+      'transitionend',
       function () {
-        chart.resize();
-        pieChart.resize();
-        barChart.resize();
+        chart.resize()
+        pieChart.resize()
+        barChart.resize()
       },
       false
-    );
+    )
   },
-  methods: {},
-};
+  methods: {}
+}
 </script>
 <style lang="scss" scoped>
 .mainpage-wrap {

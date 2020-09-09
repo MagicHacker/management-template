@@ -26,42 +26,42 @@
 </template>
 <script>
 export default {
-  name: "TodoLists",
+  name: 'TodoLists',
   data() {
     return {
-      todoList: ["Joe", "Johnson", "MagicHacker"],
-    };
+      todoList: ['Joe', 'Johnson', 'MagicHacker']
+    }
   },
   methods: {
     addTask(event) {
-      const { value } = event.target;
+      const { value } = event.target
       if (event.keyCode === 13) {
-        this.todoList.unshift(value);
-        event.target.value = "";
+        this.todoList.unshift(value)
+        event.target.value = ''
       }
     },
     delItem(event, index) {
-      this.$confirm("是否删除", {
-        type: "warning",
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      this.$confirm('是否删除', {
+        type: 'warning',
+        confirmButtonText: '确定',
+        cancelButtonText: '取消'
       })
         .then(() => {
-          this.todoList.splice(index, 1);
+          this.todoList.splice(index, 1)
           this.$message({
-            type: "success",
-            message: "删除成功",
-          });
+            type: 'success',
+            message: '删除成功'
+          })
         })
         .catch(() => {
           this.$message({
-            type: "info",
-            message: "取消删除",
-          });
-        });
-    },
-  },
-};
+            type: 'info',
+            message: '取消删除'
+          })
+        })
+    }
+  }
+}
 </script>
 <style lang="scss">
 .todo-wrap {

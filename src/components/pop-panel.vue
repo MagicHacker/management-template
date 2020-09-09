@@ -11,20 +11,20 @@
 </template>
 <script>
 export default {
-  name: "PopPanel",
+  name: 'PopPanel',
   data() {
     return {
-      name: "名字",
-      time: "时间",
-      content: "xx",
-    };
+      name: '名字',
+      time: '时间',
+      content: 'xx'
+    }
   },
   props: {
     popItem: {
-      type: Object,
-    },
-  },
-};
+      type: Object
+    }
+  }
+}
 </script>
 <style lang="scss">
 .pop-wrap {

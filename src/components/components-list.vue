@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "ComponentsList",
-};
+  name: 'ComponentsList'
+}
 </script>
 <style lang="scss"></style>

@@ -78,75 +78,75 @@
   </div>
 </template>
 <script>
-import EmailPanel from "./email-panel";
-import MessagePanel from "./message-panel";
-import TaskPanel from "./task-panel";
-import { mapActions, mapState } from "vuex";
+import EmailPanel from './email-panel'
+import MessagePanel from './message-panel'
+import TaskPanel from './task-panel'
+import { mapActions, mapState } from 'vuex'
 export default {
-  name: "HeaderItem",
+  name: 'HeaderItem',
   data() {
     return {
-      dataBadge: "",
-      color: "#FF8C00",
+      dataBadge: '',
+      color: '#FF8C00',
       predefineColors: [
-        "#ff4500",
-        "#ff8c00",
-        "#ffd700",
-        "#90ee90",
-        "#00ced1",
-        "#1e90ff",
-        "#c71585",
-        "rgba(255, 69, 0, 0.68)",
-        "rgb(255, 120, 0)",
-        "hsv(51, 100, 98)",
-        "hsva(120, 40, 94, 0.5)",
-        "hsl(181, 100%, 37%)",
-        "hsla(209, 100%, 56%, 0.73)",
-        "#c7158577",
+        '#ff4500',
+        '#ff8c00',
+        '#ffd700',
+        '#90ee90',
+        '#00ced1',
+        '#1e90ff',
+        '#c71585',
+        'rgba(255, 69, 0, 0.68)',
+        'rgb(255, 120, 0)',
+        'hsv(51, 100, 98)',
+        'hsva(120, 40, 94, 0.5)',
+        'hsl(181, 100%, 37%)',
+        'hsla(209, 100%, 56%, 0.73)',
+        '#c7158577'
       ],
-      isSideBarOpen: false,
-    };
+      isSideBarOpen: false
+    }
   },
   mounted() {
-    this.$axios.get("/badge").then((res) => {
-      this.dataBadge = res.data.data;
-    });
+    this.$axios.get('/badge').then((res) => {
+      this.dataBadge = res.data.data
+    })
   },
   components: {
     EmailPanel,
     MessagePanel,
-    TaskPanel,
+    TaskPanel
   },
   computed: {
-    ...mapState(["sideBarOpen"]),
+    ...mapState(['sideBarOpen']),
     hamburgerLeft() {
-      return this.sideBarOpen ? 64 : 200;
-    },
+      return this.sideBarOpen ? 64 : 200
+    }
   },
   methods: {
-    ...mapActions(["changeSideBar"]),
+    ...mapActions(['changeSideBar']),
     toggleSideBar() {
-      this.isSideBarOpen = !this.isSideBarOpen;
-      this.changeSideBar(this.isSideBarOpen);
+      this.isSideBarOpen = !this.isSideBarOpen
+      this.changeSideBar(this.isSideBarOpen)
     },
     handleCommand(command) {
       switch (command) {
-        case "personalCenter":
-          this.$router.push({ path: "personCenter" });
-          break;
-        case "mainpage":
-          this.$router.push({ path: "mainpage" });
-          break;
-        case "projectAddress":
-          window.open("https://github.com/MagicHacker/management-template");
-          break;
-        case "signOut":
-          this.$router.push({ path: "login" });
-          break;
+        case 'personalCenter':
+          this.$router.push({ path: 'personCenter' })
+          break
+        case 'mainpage':
+          this.$router.push({ path: 'mainpage' })
+          break
+        case 'projectAddress':
+          window.open('https://github.com/MagicHacker/management-template')
+          break
+        case 'signOut':
+          this.$router.push({ path: 'login' })
+          break
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 <style lang="scss">
 .header-wrap {

@@ -14,25 +14,34 @@ export default {
   computed: {},
   created() {},
   mounted() {
-    const linechart = this.$echarts.init(document.querySelector('.chart'))
-    const option = {
-      xAxis: {
-        type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      },
-      yAxis: {
-        type: 'value'
-      },
-      series: [
-        {
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line'
-        }
-      ]
-    }
-    linechart.setOption(option)
-    window.onresize = () => {
-      linechart.resize()
+    this.loadChart()
+  },
+  methods: {
+    loadChart() {
+      const linechart = this.$echarts.init(document.querySelector('.chart'))
+      const option = {
+        legend: {
+          data: ['访问数据']
+        },
+        xAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            name: '访问数据',
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line'
+          }
+        ]
+      }
+      linechart.setOption(option)
+      window.onresize = () => {
+        linechart.resize()
+      }
     }
   }
 }

@@ -12,7 +12,7 @@
               <p>邮件</p>
               <p>{{ mainPanel.emailCount }}</p>
             </el-col>
-            <el-col :span="12">
+            <el-col :span="12" class="svg-style">
               <img src="../assets/svg/email-item.svg" alt />
             </el-col>
           </el-row>
@@ -29,7 +29,7 @@
               <p>访客</p>
               <p>{{ mainPanel.visitorCount }}</p>
             </el-col>
-            <el-col :span="12">
+            <el-col :span="12" class="svg-style">
               <img src="../assets/svg/visitors.svg" alt />
             </el-col>
           </el-row>
@@ -46,7 +46,7 @@
               <p>信息</p>
               <p>{{ mainPanel.messageCount }}</p>
             </el-col>
-            <el-col :span="12">
+            <el-col :span="12" class="svg-style">
               <img src="../assets/svg/message-item.svg" alt />
             </el-col>
           </el-row>
@@ -63,7 +63,7 @@
               <p>任务</p>
               <p>{{ mainPanel.taskCount }}</p>
             </el-col>
-            <el-col :span="12">
+            <el-col :span="12" class="svg-style">
               <img src="../assets/svg/task-item.svg" alt />
             </el-col>
           </el-row>
@@ -266,6 +266,11 @@ export default {
     p {
       padding: 0px;
       margin: 0px;
+    }
+    .svg-style {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .email-item {
       background-color: #fc8675;

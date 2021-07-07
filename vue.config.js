@@ -9,7 +9,7 @@ module.exports = {
       port: 8080
     },
     module: {
-      rule: [
+      rules: [
         {
           test: /\.js$/,
           exclude: /node_modules/,

@@ -5,13 +5,7 @@
       <el-table-column prop="age" label="年龄"></el-table-column>
       <el-table-column prop="salary" label="薪资"></el-table-column>
     </el-table>
-    <el-table
-      :data="fixedTable"
-      border
-      stripe
-      class="fixed-table-wrap"
-      height="400"
-    >
+    <el-table :data="fixedTable" border stripe class="fixed-table-wrap" height="400">
       <el-table-column prop="name" label="姓名"></el-table-column>
       <el-table-column prop="date" label="生日"></el-table-column>
       <el-table-column prop="address" label="地址"></el-table-column>

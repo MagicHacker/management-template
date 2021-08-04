@@ -18,9 +18,7 @@ export default {
   },
   methods: {
     loadChart() {
-      const linechart = this.$echarts.init(
-        document.querySelector('.line-chart')
-      )
+      const linechart = this.$echarts.init(document.querySelector('.line-chart'))
       const option = {
         legend: {
           data: ['访问数据']

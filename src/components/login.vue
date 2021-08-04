@@ -3,12 +3,7 @@
     <div class="login-wrap">
       <div class="login-left"></div>
       <div class="login-right">
-        <el-form
-          label-width="60px"
-          label-position="left"
-          size="mini"
-          class="login-input"
-        >
+        <el-form label-width="60px" label-position="left" size="mini" class="login-input">
           <el-form-item label="用户名">
             <el-input v-model="username"></el-input>
           </el-form-item>
@@ -17,9 +12,7 @@
           </el-form-item>
           <el-form-item size="medium">
             <el-button size="medium" @click="signIn">登录</el-button>
-            <el-button size="medium" class="register-button" @click="signUp"
-              >注册</el-button
-            >
+            <el-button size="medium" class="register-button" @click="signUp">注册</el-button>
           </el-form-item>
         </el-form>
       </div>

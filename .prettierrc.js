@@ -1,22 +1,18 @@
+// .prettierrc.js
 module.exports = {
-  singleQuote: true,
-  printWidth: 80,
-  semi: false,
+  printWidth: 120,
   tabWidth: 2,
-  trailingComma: 'none',
-  overrides: [
-    {
-      files: [
-        '*.json',
-        '.eslintrc',
-        '.tslintrc',
-        '.prettierrc',
-        '.tern-project'
-      ],
-      options: {
-        parser: 'json',
-        tabWidth: 2
-      }
-    }
-  ]
-}
+  useTabs: false,
+  semi: true,
+  singleQuote: true,
+  quoteProps: 'as-needed',
+  jsxSingleQuote: false,
+  trailingComma: 'all',
+  bracketSpacing: true,
+  jsxBracketSameLine: false,
+  rangeStart: 0,
+  rangeEnd: Infinity,
+  htmlWhitespaceSensitivity: 'css',
+  endOfLine: 'auto',
+  embeddedLanguageFormatting: 'auto',
+};

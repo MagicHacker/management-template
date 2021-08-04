@@ -1,5 +1,5 @@
-const Mock = require('mockjs') // mockjs 导入依赖模块
-const util = require('./util') // 自定义工具模块
+const Mock = require('mockjs'); // mockjs 导入依赖模块
+const util = require('./util'); // 自定义工具模块
 // 返回一个函数
 module.exports = (app) => {
   // 监听http请求
@@ -8,22 +8,22 @@ module.exports = (app) => {
     // const json = util.getJsonFile("./main-panel.json");
     // 将json传入 Mock.mock 方法中，生成的数据返回给浏览器
     // res.json(Mock.mock(json));
-    mockJson(res, './main-panel.json')
-  })
+    mockJson(res, './main-panel.json');
+  });
   app.get('/email-panel', (req, res) => {
-    mockJson(res, './email-panel.json')
-  })
+    mockJson(res, './email-panel.json');
+  });
   app.get('/message-panel', (req, res) => {
-    mockJson(res, './message-panel.json')
-  })
+    mockJson(res, './message-panel.json');
+  });
   app.get('/task-panel', (req, res) => {
-    mockJson(res, './task-panel.json')
-  })
+    mockJson(res, './task-panel.json');
+  });
   app.get('/badge', (req, res) => {
-    mockJson(res, './badge.json')
-  })
-}
+    mockJson(res, './badge.json');
+  });
+};
 
 const mockJson = (res, jsonFile) => {
-  res.json(Mock.mock(util.getJsonFile(jsonFile)))
-}
+  res.json(Mock.mock(util.getJsonFile(jsonFile)));
+};

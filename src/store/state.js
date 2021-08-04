@@ -1,4 +1,4 @@
 const state = {
-  sideBarOpen: false
-}
-export default state
+  sideBarOpen: false,
+};
+export default state;

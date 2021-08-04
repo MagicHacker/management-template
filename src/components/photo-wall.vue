@@ -1,11 +1,6 @@
 <template>
   <div class="photo-wall-wrap">
-    <img
-      :src="item"
-      class="photo-item"
-      v-for="(item, index) in imageArr"
-      :key="index"
-    />
+    <img v-for="(item, index) in imageArr" :key="index" :src="item" class="photo-item" />
   </div>
 </template>
 <script>
@@ -35,11 +30,11 @@ export default {
         require('../assets/images/sky.jpg'),
         require('../assets/images/snow.jpg'),
         require('../assets/images/swing.jpg'),
-        require('../assets/images/lake.jpg')
-      ]
-    }
-  }
-}
+        require('../assets/images/lake.jpg'),
+      ],
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .photo-wall-wrap {

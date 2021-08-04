@@ -1,10 +1,6 @@
 <template>
   <div class="header-wrap">
-    <div
-      class="header-left"
-      @click="toggleSideBar"
-      :style="{ left: hamburgerLeft + 'px' }"
-    >
+    <div class="header-left" :style="{ left: hamburgerLeft + 'px' }" @click="toggleSideBar">
       <el-tooltip effect="dark" content="菜单栏收缩" placement="bottom">
         <img src="../assets/svg/hamburger.svg" />
       </el-tooltip>
@@ -34,32 +30,18 @@
         </li>
         <li v-popover:colorPop class="palette-item">
           <el-tooltip effect="dark" content="调色板" placement="bottom">
-            <el-color-picker
-              v-model="color"
-              size="small"
-              :predefine="predefineColors"
-            ></el-color-picker>
+            <el-color-picker v-model="color" size="small" :predefine="predefineColors"></el-color-picker>
           </el-tooltip>
         </li>
         <li v-popover:personPop>
           <el-tooltip effect="dark" content="个人中心" placement="bottom">
-            <el-dropdown
-              trigger="click"
-              placement="bottom"
-              @command="handleCommand"
-            >
+            <el-dropdown trigger="click" placement="bottom" @command="handleCommand">
               <img src="../assets/svg/person.svg" alt />
               <el-dropdown-menu>
-                <el-dropdown-item command="personalCenter"
-                  >个人中心</el-dropdown-item
-                >
+                <el-dropdown-item command="personalCenter">个人中心</el-dropdown-item>
                 <el-dropdown-item command="mainpage">首页</el-dropdown-item>
-                <el-dropdown-item command="projectAddress"
-                  >项目地址</el-dropdown-item
-                >
-                <el-dropdown-item divided command="signOut"
-                  >退出登录</el-dropdown-item
-                >
+                <el-dropdown-item command="projectAddress">项目地址</el-dropdown-item>
+                <el-dropdown-item divided command="signOut">退出登录</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </el-tooltip>
@@ -78,12 +60,17 @@
   </div>
 </template>
 <script>
-import EmailPanel from './email-panel'
-import MessagePanel from './message-panel'
-import TaskPanel from './task-panel'
-import { mapActions, mapState } from 'vuex'
+import EmailPanel from './email-panel';
+import MessagePanel from './message-panel';
+import TaskPanel from './task-panel';
+import { mapActions, mapState } from 'vuex';
 export default {
   name: 'HeaderItem',
+  components: {
+    EmailPanel,
+    MessagePanel,
+    TaskPanel,
+  },
   data() {
     return {
       dataBadge: '',
@@ -102,51 +89,46 @@ export default {
         'hsva(120, 40, 94, 0.5)',
         'hsl(181, 100%, 37%)',
         'hsla(209, 100%, 56%, 0.73)',
-        '#c7158577'
+        '#c7158577',
       ],
-      isSideBarOpen: false
-    }
-  },
-  mounted() {
-    this.$axios.get('/badge').then((res) => {
-      this.dataBadge = res.data.data
-    })
-  },
-  components: {
-    EmailPanel,
-    MessagePanel,
-    TaskPanel
+      isSideBarOpen: false,
+    };
   },
   computed: {
     ...mapState(['sideBarOpen']),
     hamburgerLeft() {
-      return this.sideBarOpen ? 64 : 200
-    }
+      return this.sideBarOpen ? 64 : 200;
+    },
+  },
+  mounted() {
+    this.$axios.get('/badge').then((res) => {
+      this.dataBadge = res.data.data;
+    });
   },
   methods: {
     ...mapActions(['changeSideBar']),
     toggleSideBar() {
-      this.isSideBarOpen = !this.isSideBarOpen
-      this.changeSideBar(this.isSideBarOpen)
+      this.isSideBarOpen = !this.isSideBarOpen;
+      this.changeSideBar(this.isSideBarOpen);
     },
     handleCommand(command) {
       switch (command) {
         case 'personalCenter':
-          this.$router.push({ path: 'personCenter' })
-          break
+          this.$router.push({ path: 'personCenter' });
+          break;
         case 'mainpage':
-          this.$router.push({ path: 'mainpage' })
-          break
+          this.$router.push({ path: 'mainpage' });
+          break;
         case 'projectAddress':
-          window.open('https://github.com/MagicHacker/management-template')
-          break
+          window.open('https://github.com/MagicHacker/management-template');
+          break;
         case 'signOut':
-          this.$router.push({ path: 'login' })
-          break
+          this.$router.push({ path: 'login' });
+          break;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style lang="scss">
 .header-wrap {

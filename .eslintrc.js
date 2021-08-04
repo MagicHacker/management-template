@@ -11,21 +11,21 @@ module.exports = {
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
       globalReturn: false,
-      impliedStrict: true
-    }
+      impliedStrict: true,
+    },
   },
   extends: [
     'alloy',
     'alloy/vue', // Vue项目配置
-    'prettier'
+    'prettier',
   ],
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': 'error'
-  }
-}
+    'prettier/prettier': 'error',
+  },
+};

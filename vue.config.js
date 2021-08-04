@@ -1,12 +1,12 @@
-const path = require('path')
-const resolve = (dir) => path.join(__dirname, dir)
+const path = require('path');
+const resolve = (dir) => path.join(__dirname, dir);
 module.exports = {
   configureWebpack: {
     devServer: {
       before: require('./mock'),
       open: true,
       hot: true,
-      port: 8080
+      port: 8080,
     },
     module: {
       rules: [
@@ -16,21 +16,21 @@ module.exports = {
           use: {
             loader: 'babel-loader',
             options: {
-              cacheDirectory: true
-            }
-          }
-        }
-      ]
+              cacheDirectory: true,
+            },
+          },
+        },
+      ],
     },
     resolve: {
       alias: {
         '@src': resolve('src'),
-        '@assets': resolve('assets')
-      }
-    }
+        '@assets': resolve('assets'),
+      },
+    },
   },
   chainWebpack: (config) => {
-    config.module.rule('svg').exclude.add(resolve('./src/icon')).end()
+    config.module.rule('svg').exclude.add(resolve('./src/icon')).end();
     config.module
       .rule('icon')
       .test(/\.svg$/)
@@ -39,13 +39,13 @@ module.exports = {
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
       .options({
-        symbolId: 'icon-[name]'
+        symbolId: 'icon-[name]',
       })
       .end()
       .use('svgo-loader')
       .loader('svgo-loader')
       .options({
-        externalConfig: 'svgo-config.yml'
-      })
-  }
-}
+        externalConfig: 'svgo-config.yml',
+      });
+  },
+};

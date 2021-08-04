@@ -7,8 +7,8 @@
 export default {
   name: 'App',
   components: {},
-  mounted() {},
-};
+  mounted() {}
+}
 </script>
 
 <style lang="scss">

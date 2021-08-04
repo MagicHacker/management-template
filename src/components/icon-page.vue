@@ -9,20 +9,20 @@
   </el-tabs>
 </template>
 <script>
-import ElementIcon from './element-icon';
-import CustomizedIcon from './customized-icon';
+import ElementIcon from './element-icon'
+import CustomizedIcon from './customized-icon'
 export default {
   name: 'IconPage',
   components: {
     ElementIcon,
-    CustomizedIcon,
+    CustomizedIcon
   },
   data() {
     return {
-      activeItem: 'customized',
-    };
-  },
-};
+      activeItem: 'customized'
+    }
+  }
+}
 </script>
 <style lang="scss">
 .icon-wrap {

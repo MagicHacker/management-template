@@ -137,7 +137,7 @@ export default {
         twitter: '',
         facebook: '',
         phone: '',
-        instagram: '',
+        instagram: ''
       },
       date: new Date(),
       timeline: [
@@ -145,20 +145,20 @@ export default {
           timestamp: '2019/4/12',
           title: '提交GitHub',
           content: 'zx提交于2019/4/12',
-          type: 'primary',
+          type: 'primary'
         },
         {
           timestamp: '2019/4/8',
           title: '提交GItHub',
           content: 'zx提交于2019/4/8',
-          type: 'primary',
+          type: 'primary'
         },
         {
           timestamp: '2019/4/3',
           title: '提交GitHub',
           content: 'zx提交于2019/4/3',
-          type: 'primary',
-        },
+          type: 'primary'
+        }
       ],
       imgUrl: require('../assets/Belle.jpg'),
       submitLoading: false,
@@ -167,79 +167,79 @@ export default {
           {
             required: true,
             message: '输入不能为空',
-            trigger: ['blur', 'change'],
-          },
+            trigger: ['blur', 'change']
+          }
         ],
         twitter: [
           {
             required: true,
             message: '输入不能为空',
-            trigger: ['blur', 'change'],
-          },
+            trigger: ['blur', 'change']
+          }
         ],
         facebook: [
           {
             required: true,
             message: '输入不能为空',
-            trigger: ['blur', 'change'],
-          },
+            trigger: ['blur', 'change']
+          }
         ],
         phone: [
           {
             required: true,
             message: '输入不能为空',
-            trigger: ['blur', 'change'],
-          },
+            trigger: ['blur', 'change']
+          }
         ],
         instagram: [
           {
             required: true,
             message: '输入不能为空',
-            trigger: ['blur', 'change'],
-          },
-        ],
-      },
-    };
+            trigger: ['blur', 'change']
+          }
+        ]
+      }
+    }
   },
   methods: {
     handleAvatar(res, file) {
-      this.imgUrl = URL.createObjectURL(file.raw);
+      this.imgUrl = URL.createObjectURL(file.raw)
     },
     // 访问Facebook
     goToFacebook() {
-      window.open(`https://${this.facebook}`);
+      window.open(`https://${this.facebook}`)
     },
     // 访问Twitter
     goToTwitter() {
-      window.open(`https://${this.twitter}`);
+      window.open(`https://${this.twitter}`)
     },
     // 访问Instagram
     goToInstagram() {
-      window.open(`https://${this.instagram}`);
+      window.open(`https://${this.instagram}`)
     },
     // 提交
     submit(refName) {
       this.$refs[refName].validate((valid) => {
         if (valid) {
-          this.submitLoading = true;
+          this.submitLoading = true
           setTimeout(() => {
-            this.submitLoading = false;
+            this.submitLoading = false
             this.$message({
               type: 'success',
-              message: '提交成功',
-            });
-          }, 1500);
+              message: '提交成功'
+            })
+          }, 1500)
         } else {
-          return false;
+          return false
         }
-      });
+      })
     },
     // 重置
     reset(refName) {
-      this.$refs[refName].resetFields();
-    },
-  },
-};
+      this.$refs[refName].resetFields()
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 .person-wrap {

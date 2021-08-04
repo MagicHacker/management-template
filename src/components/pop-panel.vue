@@ -15,17 +15,17 @@ export default {
   props: {
     popItem: {
       type: Object,
-      default: {},
-    },
+      default: {}
+    }
   },
   data() {
     return {
       name: '名字',
       time: '时间',
-      content: 'xx',
-    };
-  },
-};
+      content: 'xx'
+    }
+  }
+}
 </script>
 <style lang="scss">
 .pop-wrap {

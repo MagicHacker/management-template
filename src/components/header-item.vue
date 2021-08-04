@@ -60,16 +60,16 @@
   </div>
 </template>
 <script>
-import EmailPanel from './email-panel';
-import MessagePanel from './message-panel';
-import TaskPanel from './task-panel';
-import { mapActions, mapState } from 'vuex';
+import EmailPanel from './email-panel'
+import MessagePanel from './message-panel'
+import TaskPanel from './task-panel'
+import { mapActions, mapState } from 'vuex'
 export default {
   name: 'HeaderItem',
   components: {
     EmailPanel,
     MessagePanel,
-    TaskPanel,
+    TaskPanel
   },
   data() {
     return {
@@ -89,46 +89,46 @@ export default {
         'hsva(120, 40, 94, 0.5)',
         'hsl(181, 100%, 37%)',
         'hsla(209, 100%, 56%, 0.73)',
-        '#c7158577',
+        '#c7158577'
       ],
-      isSideBarOpen: false,
-    };
+      isSideBarOpen: false
+    }
   },
   computed: {
     ...mapState(['sideBarOpen']),
     hamburgerLeft() {
-      return this.sideBarOpen ? 64 : 200;
-    },
+      return this.sideBarOpen ? 64 : 200
+    }
   },
   mounted() {
     this.$axios.get('/badge').then((res) => {
-      this.dataBadge = res.data.data;
-    });
+      this.dataBadge = res.data.data
+    })
   },
   methods: {
     ...mapActions(['changeSideBar']),
     toggleSideBar() {
-      this.isSideBarOpen = !this.isSideBarOpen;
-      this.changeSideBar(this.isSideBarOpen);
+      this.isSideBarOpen = !this.isSideBarOpen
+      this.changeSideBar(this.isSideBarOpen)
     },
     handleCommand(command) {
       switch (command) {
         case 'personalCenter':
-          this.$router.push({ path: 'personCenter' });
-          break;
+          this.$router.push({ path: 'personCenter' })
+          break
         case 'mainpage':
-          this.$router.push({ path: 'mainpage' });
-          break;
+          this.$router.push({ path: 'mainpage' })
+          break
         case 'projectAddress':
-          window.open('https://github.com/MagicHacker/management-template');
-          break;
+          window.open('https://github.com/MagicHacker/management-template')
+          break
         case 'signOut':
-          this.$router.push({ path: 'login' });
-          break;
+          this.$router.push({ path: 'login' })
+          break
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 <style lang="scss">
 .header-wrap {

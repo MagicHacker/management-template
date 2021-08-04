@@ -14,5 +14,5 @@ module.exports = {
   rangeEnd: Infinity,
   htmlWhitespaceSensitivity: 'css',
   endOfLine: 'auto',
-  embeddedLanguageFormatting: 'auto',
-};
+  embeddedLanguageFormatting: 'auto'
+}

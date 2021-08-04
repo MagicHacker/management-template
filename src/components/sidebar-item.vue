@@ -125,23 +125,23 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 export default {
   name: 'SideBarItem',
   components: {},
   data() {
-    return {};
+    return {}
   },
   computed: {
     ...mapState(['sideBarOpen']),
     sliderWidth() {
-      return this.sideBarOpen ? 64 : 200;
+      return this.sideBarOpen ? 64 : 200
     },
     routePath() {
-      return this.$route.path;
-    },
-  },
-};
+      return this.$route.path
+    }
+  }
+}
 </script>
 <style lang="scss">
 .sidebar-wrap {

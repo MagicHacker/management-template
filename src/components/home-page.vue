@@ -7,7 +7,7 @@
         class="body-wrap"
         :style="{
           width: `calc(100% - ${bodyLeft}px)`,
-          left: bodyLeft + 'px',
+          left: bodyLeft + 'px'
         }"
       >
         <router-view />
@@ -16,25 +16,25 @@
   </div>
 </template>
 <script>
-import HeaderItem from './header-item';
-import SidebarItem from './sidebar-item';
-import { mapState } from 'vuex';
+import HeaderItem from './header-item'
+import SidebarItem from './sidebar-item'
+import { mapState } from 'vuex'
 export default {
   name: 'HomePage',
   components: {
     HeaderItem,
-    SidebarItem,
+    SidebarItem
   },
   data() {
-    return {};
+    return {}
   },
   computed: {
     ...mapState(['sideBarOpen']),
     bodyLeft() {
-      return this.sideBarOpen ? 64 : 200;
-    },
-  },
-};
+      return this.sideBarOpen ? 64 : 200
+    }
+  }
+}
 </script>
 <style lang="scss">
 .homepage-wrap {

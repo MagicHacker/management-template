@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: 'MarkDownItem',
-};
+  name: 'MarkDownItem'
+}
 </script>
 <style lang="scss"></style>

@@ -11,7 +11,7 @@
             <pop-panel
               :pop-item="{
                 name: item.name,
-                content: item.content,
+                content: item.content
               }"
             ></pop-panel>
             <template v-slot:reference>
@@ -32,28 +32,28 @@
   </div>
 </template>
 <script>
-import PopPanel from './pop-panel';
+import PopPanel from './pop-panel'
 export default {
   name: 'EmailPanel',
   components: {
-    PopPanel,
+    PopPanel
   },
   data() {
     return {
-      datas: [],
-    };
+      datas: []
+    }
   },
   mounted() {
     this.$axios.get('/message-panel').then((res) => {
-      this.datas = res.data.datas;
-    });
+      this.datas = res.data.datas
+    })
   },
   methods: {
     checkEmail() {
-      alert(1);
-    },
-  },
-};
+      alert(1)
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 .panel-header {

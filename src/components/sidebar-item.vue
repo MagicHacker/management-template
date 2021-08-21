@@ -51,9 +51,6 @@
         <router-link to="/editableTable">
           <el-menu-item index="/editableTable">可编辑表格</el-menu-item>
         </router-link>
-        <router-link to="/customizedTable">
-          <el-menu-item index="/customizedTable">自定义表格</el-menu-item>
-        </router-link>
       </el-submenu>
       <el-submenu index="5">
         <template v-slot:title>

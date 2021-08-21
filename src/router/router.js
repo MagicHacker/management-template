@@ -8,7 +8,6 @@ import LineChart from '../components/line-chart.vue'
 import PieChart from '../components/pie-chart.vue'
 import NormalTable from '../components/normal-table.vue'
 import EditableTable from '../components/editable-table.vue'
-import CustomizedTable from '../components/customized-table.vue'
 import NormalForm from '../components/normal-form.vue'
 import CustomizedForm from '../components/customized-form.vue'
 import ComponentsList from '../components/components-list.vue'
@@ -63,10 +62,6 @@ export default new Router({
         {
           path: '/editableTable',
           component: EditableTable
-        },
-        {
-          path: '/customizedTable',
-          component: CustomizedTable
         },
         {
           path: '/normalForm',

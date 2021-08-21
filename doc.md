@@ -34,7 +34,6 @@
 │   │   ├── components-list.vue ---组件列表页面
 │   │   ├── customized-form.vue ---自定义表单
 │   │   ├── customized-icon.vue ---自定义图标
-│   │   ├── customized-table.vue ---自定义表格
 │   │   ├── editable-table.vue ---可编辑表格
 │   │   ├── element-icon.vue ---element 图标
 │   │   ├── email-panel.vue ---邮件面板

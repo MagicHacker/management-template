@@ -1,4 +1,5 @@
 const path = require('path')
+const Webpack = require('webpack')
 const resolve = (dir) => path.join(__dirname, dir)
 module.exports = {
   configureWebpack: {
@@ -27,7 +28,8 @@ module.exports = {
         '@src': resolve('src'),
         '@assets': resolve('assets')
       }
-    }
+    },
+    plugins: [new Webpack.HotModuleReplacementPlugin()]
   },
   chainWebpack: (config) => {
     config.module.rule('svg').exclude.add(resolve('./src/icon')).end()

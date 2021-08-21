@@ -37,7 +37,8 @@ import {
   TimelineItem,
   Table,
   TableColumn,
-  Calendar
+  Calendar,
+  Tag
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 require('echarts/lib/chart/bar')
@@ -79,7 +80,8 @@ Vue.config.productionTip = false
   TimelineItem,
   Table,
   TableColumn,
-  Calendar
+  Calendar,
+  Tag
 ].forEach((item) => {
   Vue.use(item)
 })

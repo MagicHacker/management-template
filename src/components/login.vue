@@ -11,7 +11,7 @@
             <el-input v-model="password" show-password></el-input>
           </el-form-item>
           <el-form-item size="medium">
-            <el-button size="medium" @click="signIn">登录</el-button>
+            <el-button size="medium" type="primary" @click="signIn">登录</el-button>
             <el-button size="medium" class="register-button" @click="signUp">注册</el-button>
           </el-form-item>
         </el-form>
@@ -59,39 +59,40 @@ export default {
 .login-container {
   width: 100%;
   height: 100%;
-  position: relative;
-  background-image: url('../assets/login-bg.png');
-  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
   .login-wrap {
-    position: absolute;
-    width: 686px;
-    height: 300px;
-    top: 50%;
-    left: 50%;
-    margin: -150px 0px 0px -348px;
+    width: 700px;
+    height: 400px;
+    background-color: #f6f8fa;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 10px #e6e8e9;
+    position: relative;
   }
   .login-left {
-    width: 50%;
-    height: 100%;
+    width: 380px;
+    height: 240px;
     background-image: url('../assets/login-left.png');
     background-repeat: no-repeat;
-    float: left;
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .login-right {
-    width: 50%;
-    height: 100%;
-    position: relative;
-    background-color: rgb(206, 90, 90);
-    float: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 35px;
     .login-input {
       width: 240px;
       height: 140px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin: -70px 0px 0px -120px;
       .el-form-item__label {
-        color: #fff;
+        color: #000;
+        padding: 0px;
+        text-align: center;
       }
       .register-button {
         margin-left: 40px;
